@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ITSkills.java&apos; to &apos;Portfolio/src/main/java/com.app.ghost.model&apos;&#x0D;&#x0A;- Original project: &apos;Portfolio&apos;&#x0D;&#x0A;- Destination element: &apos;Portfolio/src/main/java/com.app.ghost.model&apos;&#x0D;&#x0A;- Original element: &apos;com.app.ghost.model.ITSkills.java&apos;" description="Copy compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.ghost.model" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.ghost.model{ITSkills.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1681627413114" units="1" version="1.0"/>
+</session>

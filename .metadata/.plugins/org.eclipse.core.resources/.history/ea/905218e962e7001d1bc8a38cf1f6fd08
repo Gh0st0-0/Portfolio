@@ -1,0 +1,16 @@
+package com.app.ghost.service;
+
+import org.springframework.stereotype.Service;
+
+import com.app.ghost.model.ProjectImages;
+
+@Service
+public class ProjectImageService implements IProjectImageService {
+
+	@Override
+	public ProjectImages findImageById(long id) {
+		ProjectImages image = 
+		return null;
+	}
+
+}

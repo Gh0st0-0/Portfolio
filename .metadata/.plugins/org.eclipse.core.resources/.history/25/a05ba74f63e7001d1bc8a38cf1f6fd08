@@ -1,0 +1,73 @@
+package com.app.ghost.controller;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.ghost.model.ProjectImages;
+import com.app.ghost.model.Projects;
+import com.app.ghost.service.CandidateService;
+import com.app.ghost.service.ProjectService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RestController
+@CrossOrigin("*")
+@Transactional
+public class ProjectController implements ImpProjectController {
+
+	private CandidateService candSer;
+	private ProjectService projServ;
+
+	public ProjectController(CandidateService candSer, ProjectService projServ) {
+		this.candSer = candSer;
+		this.projServ = projServ;
+	}
+
+	@Override
+	public boolean ProjectPersist(Projects proj, long cand_id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Projects updateProject(Projects proj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Projects fetchProjectByID(long proj_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Projects> fetchAllProjects(long cand_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Projects removeProject(long cand_id, long proj_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addImage(long proj_id, ProjectImages pi) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeImage(long proj_id, long img_id) {
+		Projects proj = this.projServ.findProjectById(proj_id);
+		return false;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.app.ghost.service;
+
+public interface IProjectImageService {
+
+}

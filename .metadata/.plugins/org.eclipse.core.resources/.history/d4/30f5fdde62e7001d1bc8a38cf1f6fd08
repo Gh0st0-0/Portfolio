@@ -1,0 +1,13 @@
+package com.app.ghost.service;
+
+import com.app.ghost.model.ProjectImages;
+
+public class ProjectImageService implements IProjectImageService {
+
+	@Override
+	public ProjectImages findImageById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

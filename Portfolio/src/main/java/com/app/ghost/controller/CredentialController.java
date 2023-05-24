@@ -48,14 +48,14 @@ public class CredentialController implements ImpCredController {
 	public boolean credentialsPersisted(@PathVariable long cand_id, @RequestBody Credentials cred) {
 		Credentials cr = this.credServ.saveCreds(cred);
 		if (cr != null) {
-			log.info("Credentials were persisted", LocalDate.now(), cred);
+			log.info("Credentials were persisted", cred);
 			if(this.candServ.linkCreds(cred, cand_id)) {
 				return true;
 			}else {
 				return false;
 			}
 		} else {
-			log.error("Credentials were not persisted", LocalDate.now(), cred);
+			log.error("Credentials were not persisted", cred);
 			return false;
 		}
 	}
@@ -65,9 +65,9 @@ public class CredentialController implements ImpCredController {
 	public Credentials updatedCred(@RequestBody Credentials update) {
 		Credentials newCred = this.credServ.updateCreds(update);
 		if (newCred != null) {
-			log.info("Candidate credentials updated", LocalDate.now(), newCred);
+			log.info("Candidate credentials updated", newCred);
 		} else {
-			log.error("Candidate Credentials not updated", LocalDate.now(), newCred);
+			log.error("Candidate Credentials not updated", newCred);
 		}
 		return newCred;
 	}

@@ -37,7 +37,7 @@ public class Projects extends BaseEntity {
 	@Column
 	private LocalDate projectEndDate;
 	@Column
-	private int projectDuration;
+	private int projectDuration; // in weeks
 	@Column
 	private String projectRole;
 	@Column

@@ -30,9 +30,7 @@
     <fullyQualifiedTypeName name="com.app.ghost.model.Credentials"/>
     <fullyQualifiedTypeName name="com.app.ghost.service.ITSkillService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="com.app.ghost.model.ITSkills"/>
     <fullyQualifiedTypeName name="com.app.ghost.service.OtherSkillService"/>
-    <fullyQualifiedTypeName name="com.app.ghost.model.OtherSkills"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.app.ghost.service.CandidateService"/>
     <fullyQualifiedTypeName name="com.app.ghost.service.ProjectService"/>
@@ -40,10 +38,13 @@
     <fullyQualifiedTypeName name="com.app.ghost.repository.ProjectImageRepository"/>
     <fullyQualifiedTypeName name="com.app.ghost.service.ProjectImageService"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="com.app.ghost.model.ProjectImages"/>
     <fullyQualifiedTypeName name="com.app.ghost.model.Candidate"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="com.app.ghost.model.Projects"/>
+    <fullyQualifiedTypeName name="com.app.ghost.model.ITSkills"/>
+    <fullyQualifiedTypeName name="com.app.ghost.model.OtherSkills"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.app.ghost.model.ProjectImages"/>
+    <fullyQualifiedTypeName name="com.app.ghost.utils.LinkObjects"/>
 </qualifiedTypeNameHistroy>

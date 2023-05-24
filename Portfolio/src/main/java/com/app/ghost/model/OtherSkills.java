@@ -17,7 +17,7 @@ import lombok.ToString;
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-@Table(name = "it_skills")
+@Table(name = "other_skills")
 public class OtherSkills extends BaseEntity {
 
 	@Column

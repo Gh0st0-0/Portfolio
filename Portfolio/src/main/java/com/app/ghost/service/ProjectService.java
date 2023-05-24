@@ -33,11 +33,11 @@ public class ProjectService implements IProjectService {
 	public Projects findProjectById(long id) {
 		Projects proj = this.projRepo.findById(id).orElse(null);
 		if(proj != null) {
-			log.info("Fetching Project Returns: ", LocalDate.now(), proj);
+			log.info("Fetching Project Returns: ", proj);
 		}else {
-			log.error("Fetching Project Returns: ", LocalDate.now(), proj);
+			log.error("Fetching Project Returns: ", proj);
 		}
-		return null;
+		return proj;
 	}
 
 	@Override

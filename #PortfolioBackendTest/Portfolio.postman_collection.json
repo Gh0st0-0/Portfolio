@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "68715b4a-2466-4ad4-873e-ecf296a8f4d0",
+		"name": "Portfolio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "GetCandidateByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/candidate/getcandidate/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"getcandidate",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCandidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"userName\": \"Gh0st\",\r\n    \"password\": \"Saumya@123546\",\r\n    \"firstName\": \"Saumya\",\r\n    \"middleName\": \"*\",\r\n    \"lastName\": \"Garg\",\r\n    \"currentWorkingLocation\": \"Pune, Maharashtra\",\r\n    \"roll\": \"Full-Stack Developer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/candidate/persist/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"persist",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCandidate Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Gh0st\",\r\n    \"password\": \"Saumya@123546\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/candidate/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"candidate",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credentials",
+			"item": [
+				{
+					"name": "GetCredentials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/credentials/getcreds/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"credentials",
+								"getcreds",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCredentials Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"primaryNo\": \"+91-9993522409\",\r\n    \"secondryNo\": \"+91-9425410221\",\r\n    \"email\": \"saumyagwl98@gmail.com\",\r\n    \"linkedin\": \"https://www.linkedin.com/in/saumya-garg-693534173/\",\r\n    \"hackerRank\": \"https://www.hackerrank.com/saumyagwl98?hr_r=1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/credentials/persist/update2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"credentials",
+								"persist",
+								"update2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ITSkills",
+			"item": [
+				{
+					"name": "GetAllSkills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/itskill/fetchList/getcand/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itskill",
+								"fetchList",
+								"getcand",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveITSkill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"technologies\": \"HTML\",\r\n    \"version\": \"5\",\r\n    \"score\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/itskill/persist/saveskill/getcand/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itskill",
+								"persist",
+								"saveskill",
+								"getcand",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetITSkillByID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"technologies\": \"MySQL\",\r\n    \"version\": \"8.0\",\r\n    \"score\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/itskill/fetchITSkill/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itskill",
+								"fetchITSkill",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateITSkill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"technologies\": \"MySQL\",\r\n    \"version\": \"8.0 C.E.\",\r\n    \"score\": \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/itskill/persist/update3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itskill",
+								"persist",
+								"update3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OtherSkills",
+			"item": [
+				{
+					"name": "GetAllOtherSkills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/otherskill/fetchList/getcand/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"otherskill",
+								"fetchList",
+								"getcand",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveOtherSkills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"technologies\": \"PTC Creo\",\r\n    \"version\": \"8\",\r\n    \"score\": \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/otherskill/persist/saveskill/getcand/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"otherskill",
+								"persist",
+								"saveskill",
+								"getcand",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSkills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"technologies\": \"AutoDesk Revit\",\r\n    \"version\": \"v2020\",\r\n    \"score\": \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/otherskill/persist/update4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"otherskill",
+								"persist",
+								"update4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchSkillByID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"technologies\": \"AutoDesk Revit\",\r\n    \"version\": \"v2020\",\r\n    \"score\": \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/otherskill/fetchOtherSkill/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"otherskill",
+								"fetchOtherSkill",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "GetAllProjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/project/AllProjects/getCand/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"AllProjects",
+								"getCand",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddImageToProjects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imageName\" : \"RavenAdverts_CompanyRegisterationPage\",\r\n    \"imageURL\" : \"https://imgur.com/tBgbpMf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/project/image/getProject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"image",
+								"getProject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveImageFromProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/project/getProject/1/getImage/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"getProject",
+								"1",
+								"getImage",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProjectByID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image_name\" : \"RavenAdverts_HomePage\",\r\n    \"imageurl\" : \"https://imgur.com/a/jtv58VY\",\r\n    \"proj_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/project/getProject/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"getProject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"projectTitle\": \"Advertisement Portal\",\r\n    \"affeleatedCompany\": \"Sunbeam-Infotech\",\r\n    \"discription\": \"My website serves as a marketing portal, connecting companies with diverse packages and plans to promote their products. It offers advertising opportunities for submitted products, aiding in effective marketing strategies.\",\r\n    \"releventLinks\": \"#\",\r\n    \"projectStartDate\": \"2023-02-20\",\r\n    \"projectEndDate\": \"2023-03-15\",\r\n    \"projectDuration\": 4,\r\n    \"projectRole\": \"Project Lead and FUllstack Developer\",\r\n    \"responsibility\": \"Develope the Frontend and the backend and allocate tasks and manage progress\",\r\n    \"images\": [\r\n        {\r\n            \"id\": 1,\r\n            \"imageName\": \"RavenAdverts_HomePage\",\r\n            \"imageURL\": \"https://imgur.com/a/jtv58VY\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"imageName\": \"RavenAdverts_LoginPage\",\r\n            \"imageURL\": \"https://imgur.com/R9nb8v5\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"imageName\": \"RavenAdverts_RegisterationPage\",\r\n            \"imageURL\": \"https://imgur.com/2cOFD0c\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"imageName\": \"RavenAdverts_CompanyRegisterationPage\",\r\n            \"imageURL\": \"https://imgur.com/tBgbpMf\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"imageName\": null,\r\n            \"imageURL\": null\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"imageName\": null,\r\n            \"imageURL\": null\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"imageName\": null,\r\n            \"imageURL\": null\r\n        }\r\n    ],\r\n    \"technologiesUsed\": \"Java, J2EE, React JS, Node JS, JavaScript, CSS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/project/persist/update5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"persist",
+								"update5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ContactMe",
+			"item": [
+				{
+					"name": "GetAllMails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/node/contact/AllMails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"node",
+								"contact",
+								"AllMails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendMeMail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"saumyagwl98@gmail.com\",\r\n    \"subject\": \"First Mail Test\",\r\n    \"message\": \"This is the first mail to test the NODE JS application\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/node/contact/Contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"node",
+								"contact",
+								"Contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMailBySubjet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"First Mail Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/node/contact/fetchMail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"node",
+								"contact",
+								"fetchMail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

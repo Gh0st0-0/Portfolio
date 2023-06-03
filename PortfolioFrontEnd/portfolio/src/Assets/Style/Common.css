@@ -1,0 +1,90 @@
+/* Nav bar */
+.Nav {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #60b8f3;
+    transition: .5s ease;
+    /* overflow-x: hidden; */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #919288 solid 1px;
+}
+
+.navLinkTitle{
+    margin-left: 5px;
+    color: rgb(245, 245, 245);
+    margin-bottom: 20px;
+}
+.Nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.navLinksCnt {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 40px;
+}
+
+.navLinkCnt {
+    padding: 10px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.navLinkCnt a {
+    text-decoration: none;
+    color: cyan;
+}
+
+.navLinkCnt a:hover {
+    color: hotpink;
+}
+
+    /* -- */
+
+.content {
+    background-color: #0B0E12;
+    border: yellow solid thin;
+    margin-left: 150px;
+}
+
+.content h2 {
+    padding-left: 20px;
+}
+
+
+/* INTRO */
+
+.introContainer{
+    width: 100%;
+    height: 50%;
+}
+
+
+/* Contact me component */
+
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Messagebox */
+.contactContainer textarea{
+    height: 100px;
+}
+
+/* Button */
+.buttonHolder{
+    display: flex;
+    justify-content: center;
+}

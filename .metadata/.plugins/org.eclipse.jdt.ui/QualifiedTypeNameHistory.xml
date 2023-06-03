@@ -47,4 +47,5 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="com.app.ghost.model.ProjectImages"/>
     <fullyQualifiedTypeName name="com.app.ghost.utils.LinkObjects"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

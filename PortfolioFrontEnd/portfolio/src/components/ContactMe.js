@@ -1,7 +1,7 @@
 // Imports
 import React from 'react'
 import {toast} from 'react-toastify';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function ContactMe(props) {

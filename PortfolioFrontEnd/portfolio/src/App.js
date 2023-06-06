@@ -11,8 +11,9 @@ import { Route, Routes } from "react-router-dom";
 export default function App() {
     return(
         <CandidateProvider>
-            <div>
-                <div className="introContainer">
+            <div className={'AppContailer'}>
+                <div >
+                {/* className="introContainer" */}
                     <Saumya></Saumya>
                 </div>
                 <div className={'content'} >
@@ -21,8 +22,10 @@ export default function App() {
                         {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                     </Routes>
                 </div>
-                <NavBar/>
                 <div>
+                    <NavBar/>
+                </div>
+                <div className={'ContactParent'}>
                     <ContactMe ></ContactMe>
                 </div>
             </div>

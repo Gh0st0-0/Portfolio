@@ -1,29 +1,36 @@
+/* App.js */
+.AppContailer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
 /* Nav bar */
 .Nav {
     height: 50px;
     width: 100%;
     position: fixed;
     z-index: 1;
-    top: 0;
+    /* top: 0; */
     left: 0;
-    background-color: #60b8f3;
+    background-color: #fbfbfb;
     transition: .5s ease;
     /* overflow-x: hidden; */
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #919288 solid 1px;
 }
 
 .navLinkTitle{
     margin-left: 5px;
-    color: rgb(245, 245, 245);
+    color: rgb(3, 3, 3);
     margin-bottom: 20px;
 }
 .Nav a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .navLinksCnt {
@@ -51,9 +58,9 @@
     /* -- */
 
 .content {
-    background-color: #0B0E12;
+    background-color: #a4f4ff;
     border: yellow solid thin;
-    margin-left: 150px;
+    /* margin-left: 150px; */
 }
 
 .content h2 {
@@ -68,8 +75,33 @@
     height: 50%;
 }
 
+.saumyaImage{
+    height: 200px;
+    border: black solid 2px;
+    border-radius: 50%;
+}
+
+.SaumyaContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+
 
 /* Contact me component */
+
+.ContactParent{
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 50%;
+    grid-area: main;
+
+}
 
 .contactContainer{
     display: flex;

@@ -16,14 +16,14 @@ export default function App() {
                 {/* className="introContainer" */}
                     <Saumya></Saumya>
                 </div>
+                <div>
+                    <NavBar/>
+                </div>
                 <div className={'content'} >
                     <Routes>
                         <Route path={'/'} element={<ProjectContainer/>}></Route>
                         {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                     </Routes>
-                </div>
-                <div>
-                    <NavBar/>
                 </div>
                 <div className={'ContactParent'}>
                     <ContactMe ></ContactMe>

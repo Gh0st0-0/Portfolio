@@ -1,22 +1,18 @@
 /* App.js */
 .AppContailer{
+    padding: 30px 5px 5px 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-around;
+    overflow: hidden;
 }
 
 /* Nav bar */
 .Nav {
     height: 50px;
     width: 100%;
-    position: fixed;
-    z-index: 1;
-    /* top: 0; */
-    left: 0;
-    background-color: #fbfbfb;
+    background-color: #aa4141;
     transition: .5s ease;
-    /* overflow-x: hidden; */
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -31,6 +27,11 @@
 .Nav a {
     text-decoration: none;
     color: rgb(0, 0, 0);
+}
+.Nav a:hover {
+    text-decoration: none;
+    color: rgb(88, 235, 88);
+    transition: .5s ease;
 }
 
 .navLinksCnt {
@@ -48,7 +49,7 @@
 
 .navLinkCnt a {
     text-decoration: none;
-    color: cyan;
+    color: rgb(79, 182, 182);
 }
 
 .navLinkCnt a:hover {
@@ -58,8 +59,8 @@
     /* -- */
 
 .content {
-    background-color: #a4f4ff;
-    border: yellow solid thin;
+    background-color: #80c4ce;
+    /* Temprary properties */
     /* margin-left: 150px; */
 }
 
@@ -94,20 +95,32 @@
 /* Contact me component */
 
 .ContactParent{
-    border: black solid 2px;
+    padding: 5px;
+    
+    /* font-family: 'Prosto One', cursive; */
+    
+    font-family: 'Work Sans', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    width: 50%;
-    grid-area: main;
-
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    height: 450px;
+    align-items: center;
 }
 
 .contactContainer{
+    padding: 10px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-image: linear-gradient(to right, green, teal) 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     overflow: hidden;
+    text-align: center;
+    height: 100%;
+    width: 50%;
 }
 
 /* Messagebox */

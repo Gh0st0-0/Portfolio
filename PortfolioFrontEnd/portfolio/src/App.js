@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Saumya from "./components/Saumya";
 import NavBar from "./Nav/NavBar";
 import ProjectContainer from "./components/Projects/ProjectContainer";
+import OpenProject from "./components/Projects/OpenProject";
 import ContactMe from "./components/ContactMe";
 import { Route, Routes } from "react-router-dom";
 
@@ -22,6 +23,8 @@ export default function App() {
                 <div className={'content'} >
                     <Routes>
                         <Route path={'/'} element={<ProjectContainer/>}></Route>
+                        <Route path={'/project'} element={<ProjectContainer/>}></Route>
+                        <Route path={'/getProject/:id'} element={<OpenProject/>}></Route>
                         {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                     </Routes>
                 </div>

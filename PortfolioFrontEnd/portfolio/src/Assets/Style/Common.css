@@ -3,7 +3,7 @@
     padding: 30px 5px 5px 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     overflow: hidden;
 }
 
@@ -59,7 +59,8 @@
     /* -- */
 
 .content {
-    background-color: #80c4ce;
+    /* background-color: #80c4ce; */
+    height: auto;
     /* Temprary properties */
     /* margin-left: 150px; */
 }
@@ -132,20 +133,21 @@
 
 .ContactParent{
     padding: 5px;
-    
+    /* background-color: yellow; */
     /* font-family: 'Prosto One', cursive; */
-    
+    /* margin-top: 10px; */
     font-family: 'Work Sans', sans-serif;
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: absolute;
-    bottom: 10px;
+    /* position: absolute; */
+    /* bottom: 10px; */
     height: 450px;
     align-items: center;
 }
 
 .contactContainer{
+    /* background-color: green; */
     padding: 10px;
     border: 2px solid transparent;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -159,13 +161,90 @@
     width: 50%;
 }
 
-/* Messagebox */
+    /* Messagebox */
 .contactContainer textarea{
     height: 100px;
 }
 
-/* Button */
+    /* Button */
 .buttonHolder{
     display: flex;
     justify-content: center;
+}
+
+
+/* Projects */
+
+.ProjectContainer{
+
+}
+
+.ProjectCard{
+    border: 1px solid;
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: blue;
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+}
+
+.ProjectCard > img {
+    width: 100%;
+    height: 150px;
+}
+
+.ProjectCard > div {
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ProjectCardSpan{
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+}
+
+.ProjectCard > p {
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+}
+
+.ProjectCard > span {
+    margin: 0.5vmax;
+    color: tomato;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vmax;
+}
+
+.ProjectCard:hover {
+    color: azure;
+    box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
+  
+    transform: translateY(-1vmax);
+}
+
+@media screen and (max-width: 600px) {
+    .ProjectCard > p {
+      font-size: 1.7vmax;
+    }
+  
+    .ProjectCard > div {
+      margin: 0vmax;
+      display: block;
+    }
+  
+    .ProjectCard > span {
+      font-size: 1.5vmax;
+    }
+  
+    .ProjectCard > div > span {
+      margin: 0 0.5vmax;
+      font: 300 1vmax "Roboto";
+    }
 }

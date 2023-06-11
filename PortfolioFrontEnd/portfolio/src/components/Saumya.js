@@ -53,7 +53,7 @@ export default function Saumya(){
     return (
         <div className={'SaumyaContainer'}>
             <div>
-                <img src={saumya} alt="Saumya Garg" className={'saumyaImage'}/>
+                <img src={saumya} alt="Saumya Garg" loading={'lazy'} className={'saumyaImage'}/>
             </div>
             <div className={'CandidateContainer'}>
                 <h2>{candidate.firstName} {candidate.lastName}</h2>
@@ -78,15 +78,15 @@ export default function Saumya(){
                     </p>
                 </div>
                 <a href='#'>
-                    <i class='bx bxl-gmail bx-flashing' ></i> {credentials.email}
+                    <i className='bx bxl-gmail bx-flashing' ></i> {credentials.email}
                 </a>
                 
                 <a href={credentials.linkedin}>
-                    <i class='bx bxl-linkedin bx-flashing' ></i> Linkedin
+                    <i className='bx bxl-linkedin bx-flashing' ></i> Linkedin
                 </a>
 
                 <a href={credentials.hackerRank}>
-                    <i class='bx bx-code bx-flashing' ></i> HackerRank
+                    <i className='bx bx-code bx-flashing' ></i> HackerRank
                 </a>
             </div>
         </div>

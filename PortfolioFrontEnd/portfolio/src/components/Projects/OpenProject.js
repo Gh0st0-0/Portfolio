@@ -11,4 +11,9 @@ export default function OpenProject() {
         // const {data} = await axios
         // setProject(data);
     }
+    return (
+        <div>
+            <h1>OpenedProject</h1>
+        </div>
+    )
 }

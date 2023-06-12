@@ -176,7 +176,10 @@
 /* Projects */
 
 .ProjectContainer{
-
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 .ProjectCard{
@@ -185,7 +188,7 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: blue;
+    color: black;
     margin: 2vmax;
     transition: all 0.5s;
     padding-bottom: 0.5vmax;
@@ -223,7 +226,7 @@
 }
 
 .ProjectCard:hover {
-    color: azure;
+    color: rgb(60, 63, 250);
     box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
   
     transform: translateY(-1vmax);
@@ -246,5 +249,76 @@
     .ProjectCard > div > span {
       margin: 0 0.5vmax;
       font: 300 1vmax "Roboto";
+    }
+}
+
+    /* Project container after opening */
+/* @import url('https://fonts.googlepis.com/css2?family=Poppins:wght@200;400;700&display=swap'); */
+.OpenedProjectContainer{
+    width: 100%;
+    padding-bottom: 20px;
+    /* height: 100px; */
+    background-color: green;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+    /* overflow-y: scroll; */
+}
+
+/* .OpenedProjectContainer > section{
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+} */
+/* 
+.OpenedProjectContainer .hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.OpenedProjectContainer .visible {
+    opacity: 1;
+    transition: all 1s;
+} */
+
+.box{
+    width: 100%;
+    height: 300px;
+    background-color: red;
+    margin-top: 600px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    
+}
+
+.box > span{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 50px;
+}
+
+.box > img{
+    height: 850px;
+    width: 1250px;
+    margin-bottom: 10px;
+}
+
+.animate{
+    opacity: 1;
+    animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(500px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
     }
 }

@@ -93,7 +93,7 @@ export default function OpenProject() {
                 <span>{porject.projectTitle}</span>
                 <img src={porject.images[0].imageURL} alt={porject.images[0].imageName} />
             </div>
-            <div className={`box ${scrollY > 300 ? 'animate' : ''}`}>
+            <div className={`box ${scrollY > 1500 ? 'animate' : ''}`}>
 
             </div>
             {/* <div className={`box ${scrollY > 300 ? 'animate' : ''}`}>

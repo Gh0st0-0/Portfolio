@@ -43,9 +43,10 @@ export default function OpenProject() {
                 },
                 {
                     id: 2,
-                    imageName: "RavenAdverts_LoginPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/LoginPage.jpeg?updatedAt=1686480413054"
+                    imageName: "RavenAdverts_ClientPage",
+                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerLandingPageAfterAddingProduct.jpeg?updatedAt=1686480413140"
                 },
+                
                 {
                     id: 3,
                     imageName: "RavenAdverts_RegisterationPage",
@@ -53,8 +54,8 @@ export default function OpenProject() {
                 },
                 {
                     id: 4,
-                    imageName: "RavenAdverts_ClientPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerLandingPageAfterAddingProduct.jpeg?updatedAt=1686480413140"
+                    imageName: "RavenAdverts_LoginPage",
+                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/LoginPage.jpeg?updatedAt=1686480413054"
                 },
                 {
                     id: 5,
@@ -89,16 +90,27 @@ export default function OpenProject() {
 
     return (
         <div className={'OpenedProjectContainer'}>
-            <div className={`box ${scrollY > 300 ? 'animate' : ''}`}>
-                <span>{porject.projectTitle}</span>
-                <img src={porject.images[0].imageURL} alt={porject.images[0].imageName} />
+            <a href={porject.releventLinks}>
+                <div className={`box ${scrollY > 100 && scrollY < 850 ? 'animate' : ''}`}>
+                        <span>{porject.projectTitle}</span>
+                        <img src={porject.images[0].imageURL} loading={'lazy'} alt={porject.images[0].imageName} />
+                </div>
+            </a>
+            <div className={`box ${scrollY > 700 && scrollY < 1450 ? 'animate' : ''}`}>
+                <img src={porject.images[1].imageURL} loading={'lazy'} alt={porject.images[1].imageName} />
+                <p>{porject.discription}</p>
             </div>
-            <div className={`box ${scrollY > 1500 ? 'animate' : ''}`}>
-
+            <div className={`box ${scrollY > 1300 && scrollY < 2050 ? 'animate' : ''}`}>
+                <div className={'CompanyHolder'}>
+                    <span>
+                        Developed Under
+                    </span>
+                    <h3>
+                        {porject.affeleatedCompany}
+                    </h3>
+                </div>
+                <img src={porject.images[2].imageURL} loading={'lazy'} alt={porject.images[2].imageName} />
             </div>
-            {/* <div className={`box ${scrollY > 300 ? 'animate' : ''}`}>
-
-            </div> */}
         </div>
     )
 }

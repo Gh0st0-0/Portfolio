@@ -34,7 +34,7 @@ export default function OpenProject() {
             projectEndDate: "2023-03-15",
             projectDuration: 4,
             projectRole: "Project Lead and Fullstack Developer",
-            responsibility: "Develope the Frontend and the backend and allocate tasks and manage progress",
+            responsibility: "Responsible for leading the team, overseeing project, and executing tasks. Proficient in front-end(HTML,CSS,JS) & back-end(Java,Node.js) development. Ensuring quality, and timely delivery.",
             images: [
                 {
                     id: 1,
@@ -110,6 +110,42 @@ export default function OpenProject() {
                     </h3>
                 </div>
                 <img src={porject.images[2].imageURL} loading={'lazy'} alt={porject.images[2].imageName} />
+            </div>
+            <div className={`box ${scrollY > 2000 && scrollY < 3050 ? 'animate' : ''}`}>
+                <img src={porject.images[3].imageURL} loading={'lazy'} alt={porject.images[3].imageName} />
+                <div className={'DateHolder'}>
+                    <span>Started on: {porject.projectStartDate}</span>
+                    <span>Ended on: {porject.projectEndDate}</span>
+                    <span>Project Durqation: {porject.projectDuration} weeks</span>
+                </div>
+            </div>
+            <div className={`box ${scrollY > 2600 && scrollY < 3850 ? 'animate' : ''}`}>
+                <div className="RoleHolder">
+                    <span>
+                        Role in the project:
+                    </span>
+                    <h3>
+                        {porject.projectRole}
+                    </h3>
+                </div>
+                <img src={porject.images[4].imageURL} loading={'lazy'} alt={porject.images[4].imageName} />
+            </div>
+            <div className={`box ${scrollY > 3500 && scrollY < 4650 ? 'animate' : ''}`}>
+                <img src={porject.images[5].imageURL} loading={'lazy'} alt={porject.images[5].imageName} />
+                <p>
+                    {porject.responsibility}
+                </p>
+            </div>
+            <div className={`box ${scrollY > 4500 && scrollY < 5650 ? 'animate' : ''}`}>
+                <div class="TechnologyHoldet">
+                    <span>
+                        Technologies Used:
+                    </span>
+                    <h3>
+                        {porject.technologiesUsed}
+                    </h3>
+                </div>
+                <img src={porject.images[6].imageURL} loading={'lazy'} alt={porject.images[6].imageName} />
             </div>
         </div>
     )

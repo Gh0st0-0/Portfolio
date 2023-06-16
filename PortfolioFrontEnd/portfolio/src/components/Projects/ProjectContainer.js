@@ -1,6 +1,8 @@
 // Imports
-import React, { useState } from 'react'
-import ProjectCard from './ProjectCard';
+import React, { lazy, useState, Suspense } from 'react'
+// import ProjectCard from './ProjectCard';
+
+const ProjectCard = lazy(() => import('./ProjectCard'));
 
 export default function ProjectContainer() {
 
@@ -60,9 +62,11 @@ export default function ProjectContainer() {
 
     return (
         <div className={'ProjectContainer'}>
-            {projects && projects.map((proj) => 
-                <ProjectCard key={proj.id} proj={proj} />
-            )}
+            <Suspense fallback={<h1>Loading...</h1>}>
+                {projects && projects.map((proj) => 
+                    <ProjectCard key={proj.id} proj={proj} />
+                )}
+            </Suspense>
         </div>
     )
 }

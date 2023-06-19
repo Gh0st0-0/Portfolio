@@ -1,5 +1,6 @@
 // Imports
 import React, { lazy, useState, Suspense } from 'react'
+import CircleLoader from "react-spinners/CircleLoader";
 // import ProjectCard from './ProjectCard';
 
 const ProjectCard = lazy(() => import('./ProjectCard'));
@@ -62,7 +63,7 @@ export default function ProjectContainer() {
 
     return (
         <div className={'ProjectContainer'}>
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
                 {projects && projects.map((proj) => 
                     <ProjectCard key={proj.id} proj={proj} />
                 )}

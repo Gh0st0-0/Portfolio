@@ -4,11 +4,27 @@ export default function NavBar() {
     return(
         <>
             <nav className={'Nav'}>
-                <div className={'NavLinksCnt'}>
-                    <div className={'navLinkTitle'} >
-                        <Link to={'/'} >Project</Link>
+                <Link to={'/project'} >
+                    <div className={'NavLinksCnt'}>
+                        <div className={'navLinkTitle'} >
+                            Project
+                        </div>
                     </div>
-                </div>
+                </Link>
+                <Link to={'/it-skills'} >
+                    <div className={'NavLinksCnt'}>
+                        <div className={'navLinkTitle'} >
+                            IT-Technologies
+                        </div>
+                    </div>
+                </Link>
+                <Link to={'/other-skills'} >
+                    <div className={'NavLinksCnt'}>
+                        <div className={'navLinkTitle'} >
+                            Non-IT-Technologies
+                        </div>
+                    </div>
+                </Link>
             </nav>
         </>
     )

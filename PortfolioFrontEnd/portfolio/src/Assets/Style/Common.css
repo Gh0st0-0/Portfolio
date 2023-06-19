@@ -7,56 +7,87 @@
     overflow: hidden;
 }
 
+/* Loading Animation */
+.AppContailer .App-Loader{
+    margin-left: 50%;
+    margin-top: 25%;
+}
+
 /* Nav bar */
-.Nav {
-    height: 50px;
-    width: 100%;
-    background-color: #aa4141;
-    transition: .5s ease;
-    padding-top: 20px;
+.NavContainer{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.navLinkTitle{
-    margin-left: 5px;
-    color: rgb(3, 3, 3);
-    margin-bottom: 20px;
+
+.Nav {
+    height: 50px;
+    width: 35%;
+    background-color: #b4e6a8;
+    transition: .5s ease;
+    /* padding-top: 20px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid black;
+    border-radius: 20rem;
 }
+
+.NavLinksCnt .navLinkTitle{
+    color: rgb(3, 3, 3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 110%;
+    display: flex;
+    justify-content: center;
+}
+
+/* .navLinkTitle:hover{
+} */
+
+
 .Nav a {
     text-decoration: none;
     color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
 }
 .Nav a:hover {
     text-decoration: none;
-    color: rgb(88, 235, 88);
+    color: rgb(251, 251, 251);
     transition: .5s ease;
+    /* animation: glow 0.5 ; */
 }
 
-.navLinksCnt {
+.NavLinksCnt {
     display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid black;
+    border-radius: 20rem; */
 }
 
-.navLinkCnt {
-    padding: 10px;
-    margin-left: 0px;
-    margin-top: 20px;
+.NavLinksCnt:hover {
+    animation: glow 0.2 ease both;
 }
 
-.navLinkCnt a {
-    text-decoration: none;
-    color: rgb(79, 182, 182);
+@keyframes glow {
+    0%{}
+    100%{
+        border: 2px solid black;
+        background-color: rgb(21, 78, 24);
+        /* color: wheat; */
+        transition: .5s ease;
+        border-radius: 20rem;
+    }
 }
 
-.navLinkCnt a:hover {
-    color: hotpink;
-}
-
-    /* -- */
+/* -Content- */
 
 .content {
     /* background-color: #80c4ce; */
@@ -180,6 +211,15 @@
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-around;
+}
+
+/* Loading animation */
+.ProjectContainer .Loader{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    /* align-items: center; */
 }
 
 .ProjectCard{

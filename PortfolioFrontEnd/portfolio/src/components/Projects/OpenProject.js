@@ -137,7 +137,7 @@ export default function OpenProject() {
                 </p>
             </div>
             <div className={`box ${scrollY > 4500 && scrollY < 5650 ? 'animate' : ''}`}>
-                <div class="TechnologyHoldet">
+                <div className="TechnologyHoldet">
                     <span>
                         Technologies Used:
                     </span>

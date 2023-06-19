@@ -81,11 +81,11 @@ export default function Saumya(){
                     <i className='bx bxl-gmail bx-flashing' ></i> {credentials.email}
                 </a>
                 
-                <a href={credentials.linkedin}>
+                <a href={credentials.linkedin} target={'#'}>
                     <i className='bx bxl-linkedin bx-flashing' ></i> Linkedin
                 </a>
 
-                <a href={credentials.hackerRank}>
+                <a href={credentials.hackerRank} target={'#'}>
                     <i className='bx bx-code bx-flashing' ></i> HackerRank
                 </a>
             </div>

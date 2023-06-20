@@ -30,10 +30,10 @@ public class OtherSkillService implements IOtherSkillService {
 	public OtherSkills findOtherSkillById(long id) {
 		OtherSkills skill = this.oSkillRepo.findById(id).orElse(null);
 		if (skill != null) {
-			log.info("Fetched the Skill: ", LocalDate.now(), skill);
+			log.info("Fetched the Skill: ", skill);
 			return skill;
 		} else {
-			log.error("Fettching Skill returns: ", LocalDate.now(), skill);
+			log.error("Fettching Skill returns: ", skill);
 			return skill;
 		}
 	}
@@ -50,10 +50,11 @@ public class OtherSkillService implements IOtherSkillService {
 			skill.setTechnologies(update.getTechnologies());
 			skill.setVersion(update.getVersion());
 			skill.setScore(update.getScore());
-			log.info("Updated the Other skills: ", LocalDate.now(), skill);
+			skill.setIconsClass(update.getIconsClass());
+			log.info("Updated the Other skills: ", skill);
 			return this.oSkillRepo.save(skill);
 		} else {
-			log.error("Error in updating the Other Skill: ", LocalDate.now(), skill);
+			log.error("Error in updating the Other Skill: ", skill);
 			return skill;
 		}
 	}
@@ -62,11 +63,11 @@ public class OtherSkillService implements IOtherSkillService {
 	public OtherSkills deleteOtherSkillById(long id) {
 		OtherSkills skill = this.oSkillRepo.findById(id).orElse(null);
 		if (skill != null) {
-			log.info("Deleting thr skill: ", LocalDate.now(), skill);
+			log.info("Deleting thr skill: ", skill);
 			this.oSkillRepo.delete(skill);
 			return skill;
 		} else {
-			log.error("Skill with id" + id + " doesnot exists and returns ", LocalDate.now(), skill);
+			log.error("Skill with id" + id + " doesnot exists and returns ", skill);
 			return skill;
 		}
 	}

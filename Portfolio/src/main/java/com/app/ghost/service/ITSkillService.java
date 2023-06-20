@@ -50,10 +50,12 @@ public class ITSkillService implements IItSkillsService {
 			skill.setTechnologies(update.getTechnologies());
 			skill.setVersion(update.getVersion());
 			skill.setScore(update.getScore());
-			log.info("Updated IT Skill: ", LocalDate.now(), skill);
+			skill.setIconsClass(update.getIconsClass());
+			skill.setCategory(update.getCategory());
+			log.info("Updated IT Skill: ", skill);
 			return this.itSRepo.save(skill);
 		} else {
-			log.error("Error in updating IT Skill", LocalDate.now(), skill);
+			log.error("Error in updating IT Skill", skill);
 			return skill;
 		}
 	}
@@ -62,11 +64,11 @@ public class ITSkillService implements IItSkillsService {
 	public ITSkills deleteITSkillById(long id) {
 		ITSkills skill = this.itSRepo.findById(id).orElse(null);
 		if (skill != null) {
-			log.info("Deliting the skill: ", LocalDate.now(), skill);
+			log.info("Deliting the skill: ", skill);
 			this.itSRepo.delete(skill);
 			return skill;
 		} else {
-			log.error("Skill with id" + id + " doesnot exists and returns ", LocalDate.now(), skill);
+			log.error("Skill with id" + id + " doesnot exists and returns ", skill);
 			return skill;
 		}
 	}

@@ -16,7 +16,6 @@
     <fullyQualifiedTypeName name="com.app.ghost.repository.ITSkillRepository"/>
     <fullyQualifiedTypeName name="com.app.ghost.repository.OtherSkillRepository"/>
     <fullyQualifiedTypeName name="com.app.ghost.repository.ProjectsRepository"/>
-    <fullyQualifiedTypeName name="javax.persistence.Column"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="lombok.ToString"/>
     <fullyQualifiedTypeName name="lombok.ToString.Exclude"/>
@@ -56,4 +55,5 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
 </qualifiedTypeNameHistroy>

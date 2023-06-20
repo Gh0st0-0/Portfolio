@@ -13,25 +13,31 @@ export default function ItSkillContainer() {
     // const [allTechs,setAllTechs] = useState([])
     const [allTechs,setAllTechs] = useState(
         [
-            {
-                id: 1,
-                technologies: "Core Java",
-                version: "11",
-                score: "7"
-            },
-            {
-                id: 2,
-                technologies: "MySQL",
-                version: "8.0 C.E.",
-                score: "6"
-            },
-            {
-                id: 3,
-                technologies: "HTML",
-                version: "5",
-                score: "7"
-            }
-        ]
+    		{
+        		"id": 1,
+        		"technologies": "Core Java",
+        		"version": "11",
+        		"score": "7",
+        		"iconsClass": "bx bxl-java bx-border bx-lg",
+                "category": "Language"
+    		},
+    		{
+        		"id": 2,
+        		"technologies": "MySQL",
+        		"version": "8.0 C.E.",
+        		"score": "6",
+        		"iconsClass": "bx bxs-data bx-border bx-lg",
+                "category": "DataBase"
+    		},
+    		{
+        		"id": 3,
+        		"technologies": "HTML",
+        		"version": "5",
+        		"score": "7",
+        		"iconsClass": "bx bxl-html5 bx-border bx-lg",
+                "category": "WebTechnology"
+    		}
+	]
     )
 
     async function fetchAllTechnologies () {
@@ -50,9 +56,38 @@ export default function ItSkillContainer() {
                 IT Skill Container
             </h1>
             <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
-                {allTechs && allTechs.map((skill) =>
-                    <ITCard key={skill.id} skill ={skill} />
-                )}
+                <div className={'IT-daddy'}>
+                    <div>
+                        <h2>
+                            Language
+                        </h2>
+                        <div className="IT-container">
+                            {allTechs && allTechs.map((skill) =>
+                                skill.category === "Language" && <ITCard key={skill.id} skill ={skill} />
+                            )}
+                        </div>
+                    </div>
+                    <div>
+                        <h2>
+                            Web-Development
+                        </h2>
+                        <div className="IT-container">
+                            {allTechs && allTechs.map((skill) =>
+                                skill.category === "WebTechnology" && <ITCard key={skill.id} skill ={skill} />
+                            )}
+                        </div>
+                    </div>
+                    <div>
+                        <h2>
+                            Data-Base
+                        </h2>
+                        <div className="IT-container">
+                            {allTechs && allTechs.map((skill) =>
+                                skill.category === "DataBase" && <ITCard key={skill.id} skill ={skill} />
+                            )}
+                        </div>
+                    </div>
+                </div>
             </Suspense>
         </div>
     )

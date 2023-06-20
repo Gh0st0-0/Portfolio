@@ -29,6 +29,9 @@ public class OtherSkills extends BaseEntity {
 	@Column
 	private String score;
 
+	@Column
+	private String iconsClass;
+	
 	@ManyToOne
 	@JoinColumn(name = "cand_id")
 	@JsonIgnore

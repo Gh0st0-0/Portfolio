@@ -28,6 +28,12 @@ public class ITSkills extends BaseEntity {
 
 	@Column
 	private String score;
+	
+	@Column
+	private String iconsClass;
+	
+	@Column
+	private String category;
 
 	@ManyToOne
 	@JoinColumn(name = "cand_id")

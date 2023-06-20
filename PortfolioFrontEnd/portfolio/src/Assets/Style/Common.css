@@ -59,7 +59,7 @@
     text-decoration: none;
     color: rgb(251, 251, 251);
     transition: .5s ease;
-    /* animation: glow 0.5 ; */
+    animation: glow 0.5 ;
 }
 
 .NavLinksCnt {

@@ -97,7 +97,7 @@
     /* margin-left: 150px; */
 }
 
-.content h2 {
+.content > h2 {
     padding-left: 20px;
 }
 
@@ -471,10 +471,20 @@
 }
 
 /* IT Skills */
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Merriweather:ital,wght@0,900;1,300&family=Oswald:wght@300&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .IT-daddy{
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.IT-daddy h2{
+    /* font-family: 'Merriweather', serif; */
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
 }
 
 .IT-container{
@@ -491,6 +501,14 @@
     height: 12rem;
     margin: 10px;
     border-radius: 30px;
+}
+
+.IT-Card > h3{
+    font-family: 'PT Serif', serif;
+}
+
+.IT-Card h4{
+    font-family: 'Oswald', sans-serif;
 }
 
 .Progress{
@@ -527,3 +545,5 @@
     box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
     animation:  bounce 0.6s ease-in both;
 }
+
+/* Other-Skills */

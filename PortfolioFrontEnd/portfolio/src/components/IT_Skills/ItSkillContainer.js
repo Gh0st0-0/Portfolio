@@ -51,44 +51,40 @@ export default function ItSkillContainer() {
     },[])
 
     return(
-        <div>
-            <h1>
-                IT Skill Container
-            </h1>
-            <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
-                <div className={'IT-daddy'}>
-                    <div>
-                        <h2>
-                            Language
-                        </h2>
-                        <div className="IT-container">
-                            {allTechs && allTechs.map((skill) =>
-                                skill.category === "Language" && <ITCard key={skill.id} skill ={skill} />
-                            )}
-                        </div>
-                    </div>
-                    <div>
-                        <h2>
-                            Web-Development
-                        </h2>
-                        <div className="IT-container">
-                            {allTechs && allTechs.map((skill) =>
-                                skill.category === "WebTechnology" && <ITCard key={skill.id} skill ={skill} />
-                            )}
-                        </div>
-                    </div>
-                    <div>
-                        <h2>
-                            Data-Base
-                        </h2>
-                        <div className="IT-container">
-                            {allTechs && allTechs.map((skill) =>
-                                skill.category === "DataBase" && <ITCard key={skill.id} skill ={skill} />
-                            )}
-                        </div>
+        <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
+            <div className={'IT-daddy'}>
+                <div>
+                    <h2>
+                        Language
+                    </h2>
+                    <div className="IT-container">
+                        {allTechs && allTechs.map((skill) =>
+                            skill.category === "Language" && <ITCard key={skill.id} skill ={skill} />
+                        )}
                     </div>
                 </div>
-            </Suspense>
-        </div>
+                <div>
+                    <h2>
+                        Web-Development
+                    </h2>
+                    <div className="IT-container">
+                        {allTechs && allTechs.map((skill) =>
+                            skill.category === "WebTechnology" && <ITCard key={skill.id} skill ={skill} />
+                        )}
+                    </div>
+                </div>
+                <div>
+                    <h2>
+                        Data-Base
+                    </h2>
+                    <div className="IT-container">
+                        {allTechs && allTechs.map((skill) =>
+                            skill.category === "DataBase" && <ITCard key={skill.id} skill ={skill} />
+                        )}
+                    </div>
+                </div>
+            </div>
+        </Suspense>
+        
     )
 }

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
 import LoadingPage from "./components/LoadingPage";
 import CircleLoader from "react-spinners/CircleLoader";
+// import Login from "./components/Admin/Login";
 // import Saumya from "./components/Saumya";
 // import NavBar from "./Nav/NavBar";
 // import ProjectContainer from "./components/Projects/ProjectContainer";
@@ -13,6 +14,7 @@ import CircleLoader from "react-spinners/CircleLoader";
 // import OtherSkillContainer from "./components/Other_Skill/OtherSkillContainer";
 // import OpenProject from "./components/Projects/OpenProject";
 // import ContactMe from "./components/ContactMe";
+
 
 // Lazy loading the components
 const ProjectContainer = lazy(() => import("./components/Projects/ProjectContainer"));
@@ -22,6 +24,7 @@ const ContactMe = lazy(() => import("./components/ContactMe"));
 const NavBar = lazy(() => import("./Nav/NavBar"));
 const ItSkillContainer = lazy(() => import("./components/IT_Skills/ItSkillContainer"));
 const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSkillContainer"));
+const Login = lazy(() => import('./components/Admin/Login'));
 
 {/* <LoadingPage /> */}
 // cssOverride={{
@@ -47,6 +50,7 @@ export default function App() {
                             <Route path={'/project/getProject/:id'} element={<OpenProject/>}></Route>
                             <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
                             <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
+                            <Route path={'//login'} element={<Login />}></Route>
                             {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                         </Routes>
                     </div>

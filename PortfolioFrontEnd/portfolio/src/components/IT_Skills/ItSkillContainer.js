@@ -48,7 +48,7 @@ export default function ItSkillContainer() {
 
     useEffect(() =>{
         // fetchAllTechnologies ()
-    },[])
+    },[]);
 
     return(
         <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
@@ -84,6 +84,7 @@ export default function ItSkillContainer() {
                     </div>
                 </div>
             </div>
+
         </Suspense>
         
     )

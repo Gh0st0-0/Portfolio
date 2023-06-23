@@ -6,10 +6,10 @@ const ITCard = ({skill}) => {
         <div className={'IT-Card'}>
             <h3>{skill.technologies}</h3>
             <h4>Version: {skill.version}</h4>
-            <div className={'Progress'}>
+            <div className={'IT-Progress'}>
                 <i className={skill.iconsClass}></i>
-                <div className={'Progress-bar'}>
-                    <div className={'Progress-bar-fill'} style={{ width: `${prog}%` }}>
+                <div className={'IT-Progress-bar'}>
+                    <div className={'IT-Progress-bar-fill'} style={{ width: `${prog}%` }}>
                         {skill.score}/10
                     </div>
                 </div>

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense  } from 'react';
 import { useContext, useEffect, useState } from 'react';
 import CandidateContext from '../components/CandidateContext';
 import saumya from '../Assets/Images/saumya.jpg';
 import axios from 'axios';
+import CircleLoader from "react-spinners/CircleLoader";
+import {Link} from "react-router-dom";
+
+
+const Login = lazy(() => import('./Admin/Login'));
 
 export default function Saumya(){
 
@@ -52,9 +57,13 @@ export default function Saumya(){
 
     return (
         <div className={'SaumyaContainer'}>
-            <div>
-                <img src={saumya} alt="Saumya Garg" loading={'lazy'} className={'saumyaImage'}/>
-            </div>
+            <Suspense fallback={<CircleLoader className={'App-Loader'} color="#11c713"/>}>
+                <div>
+                    <Link to={'/login'}>
+                        <img src={saumya} alt="Saumya Garg" loading={'lazy'} className={'saumyaImage'}/>
+                    </Link>
+                </div>
+            </Suspense>
             <div className={'CandidateContainer'}>
                 <h2>{candidate.firstName} {candidate.lastName}</h2>
                 <h3>Current Working Location: {candidate.currentWorkingLocation}</h3>

@@ -25,6 +25,7 @@ const NavBar = lazy(() => import("./Nav/NavBar"));
 const ItSkillContainer = lazy(() => import("./components/IT_Skills/ItSkillContainer"));
 const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSkillContainer"));
 const Login = lazy(() => import('./components/Admin/Login'));
+const Admin = lazy(() => import('./components/Admin/Admin'));
 
 {/* <LoadingPage /> */}
 // cssOverride={{
@@ -50,7 +51,8 @@ export default function App() {
                             <Route path={'/project/getProject/:id'} element={<OpenProject/>}></Route>
                             <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
                             <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
-                            <Route path={'//login'} element={<Login />}></Route>
+                            <Route path={'/login'} element={<Login />}></Route>
+                            <Route path={'/cand_admin'} element={<Admin />}></Route>
                             {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                         </Routes>
                     </div>

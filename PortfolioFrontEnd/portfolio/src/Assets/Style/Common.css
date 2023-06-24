@@ -611,19 +611,18 @@
 /* Login Page */
 .login{
     align-items: center;
-    align-content: center;
     font-family: 'Prosto One', cursive;
     font-family: 'Work Sans', sans-serif;
     text-align: center;
-    height : 100%;
-    justify-content: center;
+    height : 75rem;
+    /* justify-content: center; */
     background: calc(50% - 25vw) 8rem no-repeat url(../Images/LoginPage/ghost.jpg), #111111 !important;
     background-image: url(../Images/LoginPage/ghost.jpg), initial !important;
     background-position-x: calc(50% - 25vw), initial !important;
     background-position-y: 8rem, initial !important;
     background-size: initial, initial !important;
-    background-repeat-x: no-repeat, initial !important;
-    background-repeat-y: no-repeat, initial !important;
+    /* background-repeat-x: no-repeat, initial !important;
+    background-repeat-y: no-repeat, initial !important; */
     background-attachment: initial, initial !important;
     background-origin: initial, initial !important;
     background-clip: initial, initial !important;
@@ -633,15 +632,70 @@
 
 
 .loginBlock{
-    /* align-items: center; */
+    align-items: center;
     border-radius: 15%;
     border: 1px black solid;
     height: 380px;
-    width: 400px;
+    width: 500px;
     text-align: center;
-    display: grid;
+    display: flex;
     justify-content: center;
     /* margin: auto; */
     background-color: rgb(21, 32, 43);
     opacity: 70%;
+    flex-direction: column;
 }
+
+/* Button Login */
+.custom-button {
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: ipx solid;
+    border-radius: 1rem;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  
+  .custom-button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+  }
+  
+  .custom-button:hover:before {
+    left: 0;
+  }
+  
+  .custom-button:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+  }
+  
+  .custom-button:hover:after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .custom-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3498db;
+  }
+  

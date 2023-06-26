@@ -27,11 +27,6 @@ const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSki
 const Login = lazy(() => import('./components/Admin/Login'));
 const Admin = lazy(() => import('./components/Admin/Admin'));
 
-{/* <LoadingPage /> */}
-// cssOverride={{
-//     'margin-left': '50%',
-//     'margin-top': '25%'
-// }}
 export default function App() {
     return(
         <CandidateProvider>

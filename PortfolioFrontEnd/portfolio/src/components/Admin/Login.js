@@ -13,7 +13,7 @@ export default function Login() {
     const navigate = useNavigate()
 
     async function validate_login(){
-        const {data} = await axios.post("http://localhost:8080/candidate/login",loginCreds);
+        // const {data} = await axios.post("http://localhost:8080/candidate/login",loginCreds);
         navigate("/cand_admin");
     }
 
@@ -39,7 +39,7 @@ export default function Login() {
                                 <input type="password" className="form-control" id="password" name={'password'} value={loginCreds.password} onChange={HandleChanges} />
                             </div>
                         </div>
-                        <button className={'custom-button'} >Login</button>
+                        <button className={'custom-button'} onClick={validate_login} >Login</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,10 @@
 import React from 'react';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, lazy, Suspense } from 'react';
+import CircleLoader from "react-spinners/CircleLoader";
+
+const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
+const AdminITSkillCard = lazy(() => import('./AdminITSkillCard'));
+const AdminOtherSkillCard = lazy(() => import('./AdminOtherSkillCard'));
 
 export default function Admin() {
 
@@ -57,9 +62,85 @@ export default function Admin() {
         }
     ]);
 
-    async function fetchAllProjects() {
+    const [allTechs,setAllTechs] = useState(
+        [
+    		{
+        		id: 1,
+        		technologies: "Core Java",
+        		version: "11",
+        		score: "7",
+        		iconsClass: "bx bxl-java bx-border bx-lg",
+                category: "Language"
+    		},
+    		{
+        		id: 2,
+        		technologies: "MySQL",
+        		version: "8.0 C.E.",
+        		score: "6",
+        		iconsClass: "bx bxs-data bx-border bx-lg",
+                category: "DataBase"
+    		},
+    		{
+        		id: 3,
+        		technologies: "HTML",
+        		version: "5",
+        		score: "7",
+        		iconsClass: "bx bxl-html5 bx-border bx-lg",
+                category: "WebTechnology"
+    		}
+	    ]
+    );
 
+    const [allOtherSkills, setAllOtherSkills] = useState(
+        [
+            {
+                id: 1,
+                technologies: "PTC Creo",
+                version: "8",
+                score: "7",
+                iconsClass: "bx bx-edit-alt bx-border bx-lg"
+            },
+            {
+                id: 2,
+                technologies: "AutoDesk Revit",
+                version: "v2020",
+                score: "7",
+                iconsClass: "bx bx-building-house bx-border bx-lg"
+            },
+            {
+                id: 3,
+                technologies: "Ansys Fluent",
+                version: "2021 R2",
+                score: "6",
+                iconsClass: "bx bx-wind bx-border bx-lg"
+            },
+            {
+                id: 4,
+                technologies: "Video Editing",
+                version: "WonderShare Filmora ",
+                score: "7",
+                iconsClass: "bx bx-video-plus bx-border bx-lg"
+            }
+        ]
+    );
+
+    async function fetchAllProjects() {
+        // fetch product and set everything else as null
+        setAllTechs(null);
+        setAllOtherSkills(null);
     } 
+
+    async function fetchAllOtherSkill() {
+        // fetch projects and set everything else as null
+        setAllTechs(null);
+        setProjects(null);
+    }
+
+    async function fetchAllITSkills() {
+        // fetch all the it skills and set else as null
+        setAllOtherSkills(null);
+        setProjects(null);
+    }
 
     // State management to handle the sidebar
     const [isOpen, setIsOpen] = useState(false);
@@ -92,26 +173,69 @@ export default function Admin() {
                     </div>
                     <ul>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bxs-briefcase'></i>
+                            <i className='bx bxs-briefcase'></i>
                             <span onClick={fetchAllProjects}>All Projects</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bx-code-alt' ></i>
-                            <span onClick={fetchAllProjects}>All IT-Skills</span>
+                            <i className='bx bx-code-alt' ></i>
+                            <span onClick={fetchAllITSkills}>All IT-Skills</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bx-shuffle' ></i>
-                            <span onClick={fetchAllProjects}>All Non-IT-Skills</span>
+                            <i className='bx bx-shuffle' ></i>
+                            <span onClick={fetchAllOtherSkill}>All Non-IT-Skills</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bx-arrow-back' ></i>
+                            <i className='bx bx-arrow-back' ></i>
                             <span onClick={fetchAllProjects}>Log Out</span>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div>
-                
+            <div className={'CrudHolder'}>
+                <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
+                    <div className={'Project-Holder'}>
+                        {projects && projects.map((proj) => 
+                            <AdminProjectCard key={proj.id} proj={proj} />
+                        )}
+                    </div>
+                    <div className={'IT-Skill-Holder'}>
+                        <div>
+                            <h2>
+                                Language
+                            </h2>
+                            <div className="Admin-ITCard-Container">
+                                {allTechs && allTechs.map((skill) =>
+                                    skill.category==="Language" && <AdminITSkillCard key={skill.id} skill={skill} />
+                                )}
+                            </div>
+                        </div>
+                        <div>
+                            <h2>
+                                Web-Development
+                            </h2>
+                            <div className="Admin-ITCard-Container">
+                                {allTechs && allTechs.map((skill) =>
+                                    skill.category==="WebTechnology" && <AdminITSkillCard key={skill.id} skill={skill} />
+                                )}
+                            </div>
+                        </div>
+                        <div>
+                            <h2>
+                                Data-Base
+                            </h2>
+                            <div className="Admin-ITCard-Container">
+                                {allTechs && allTechs.map((skill) =>
+                                    skill.category==="DataBase" && <AdminITSkillCard key={skill.id} skill={skill} />
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                    <div className={'Admin-OtherSkill-Container'}>
+                        {allOtherSkills && allOtherSkills.map((skill) =>
+                            <AdminOtherSkillCard key={skill.id} skill={skill} />
+                        )}
+                    </div>
+                </Suspense>
             </div>
         </div>
     )

@@ -14,30 +14,30 @@ export default function ItSkillContainer() {
     const [allTechs,setAllTechs] = useState(
         [
     		{
-        		"id": 1,
-        		"technologies": "Core Java",
-        		"version": "11",
-        		"score": "7",
-        		"iconsClass": "bx bxl-java bx-border bx-lg",
-                "category": "Language"
+        		id: 1,
+        		technologies: "Core Java",
+        		version: "11",
+        		score: "7",
+        		iconsClass: "bx bxl-java bx-border bx-lg",
+                category: "Language"
     		},
     		{
-        		"id": 2,
-        		"technologies": "MySQL",
-        		"version": "8.0 C.E.",
-        		"score": "6",
-        		"iconsClass": "bx bxs-data bx-border bx-lg",
-                "category": "DataBase"
+        		id: 2,
+        		technologies: "MySQL",
+        		version: "8.0 C.E.",
+        		score: "6",
+        		iconsClass: "bx bxs-data bx-border bx-lg",
+                category: "DataBase"
     		},
     		{
-        		"id": 3,
-        		"technologies": "HTML",
-        		"version": "5",
-        		"score": "7",
-        		"iconsClass": "bx bxl-html5 bx-border bx-lg",
-                "category": "WebTechnology"
+        		id: 3,
+        		technologies: "HTML",
+        		version: "5",
+        		score: "7",
+        		iconsClass: "bx bxl-html5 bx-border bx-lg",
+                category: "WebTechnology"
     		}
-	]
+	    ]
     )
 
     async function fetchAllTechnologies () {

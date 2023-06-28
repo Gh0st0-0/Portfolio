@@ -223,6 +223,14 @@
     /* align-items: center; */
 }
 
+.CrudHolder .Loader{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    /* align-items: center; */
+}
+
 .ProjectCard{
     border: 1px solid;
     width: 14vmax;
@@ -600,7 +608,7 @@
 .Other-Progress-bar-fill{
     height: 100%;
     border-radius: 10px;
-    background-color: #357ca5;
+    background-color: #4289b3;
     transition: width 0.5s ease-out;
     display: flex;
     justify-content: center;
@@ -705,11 +713,12 @@
     display: flex;
     height: 100%;
     font-family: 'Work Sans', sans-serif;
+    margin-top: 5px;
 }
 
 .sidebar{
     width: 130px;
-    height: 103%;
+    height: 100rem;
     background: rgba(10,10,10,.65);
     box-shadow: 0 0px 32px rgb(2,4,24);
     backdrop-filter: blur(6px); 
@@ -857,4 +866,54 @@
 .sidebar.open hr {
     opacity: 1;
     transition: .4s;
+}
+
+.CrudHolder{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/*  */
+
+.Project-Holder{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 500px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+}
+
+.IT-Skill-Holder{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Admin-ITCard-Container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Admin-OtherSkill-Container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.Admin-OtherSkill-Container > a {
+    color: #295470;
 }

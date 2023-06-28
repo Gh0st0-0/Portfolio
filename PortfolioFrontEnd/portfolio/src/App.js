@@ -13,6 +13,7 @@ import CircleLoader from "react-spinners/CircleLoader";
 // import ItSkillContainer from "./components/IT_Skills/ItSkillContainer";
 // import OtherSkillContainer from "./components/Other_Skill/OtherSkillContainer";
 // import OpenProject from "./components/Projects/OpenProject";
+// import EditProject from "./components/Admin/EditProject";
 // import ContactMe from "./components/ContactMe";
 
 
@@ -26,6 +27,9 @@ const ItSkillContainer = lazy(() => import("./components/IT_Skills/ItSkillContai
 const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSkillContainer"));
 const Login = lazy(() => import('./components/Admin/Login'));
 const Admin = lazy(() => import('./components/Admin/Admin'));
+const EditProject = lazy(() => import('./components/Admin/EditProject'));
+const EditITSkill = lazy(() => import('./components/Admin/EditITSkill'));
+const EditOtherSkill = lazy(() => import('./components/Admin/EditOtherSkill'));
 
 export default function App() {
     return(
@@ -48,6 +52,9 @@ export default function App() {
                             <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
                             <Route path={'/login'} element={<Login />}></Route>
                             <Route path={'/cand_admin'} element={<Admin />}></Route>
+                            <Route path={'/admin/getProject/:id'} element={<EditProject />}></Route>
+                            <Route path={'/admin/getITSkill/:id'} element={<EditITSkill />}></Route>
+                            <Route path={'/admin/getOtherSkill/:id'} element={<EditOtherSkill />}></Route>
                             {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                         </Routes>
                     </div>

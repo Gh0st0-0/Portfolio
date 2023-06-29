@@ -917,3 +917,34 @@
 .Admin-OtherSkill-Container > a {
     color: #295470;
 }
+
+.Admin-Edit-Project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #2bb717;
+    margin-top: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=EB+Garamond:ital@1&family=Merriweather:ital,wght@0,900;1,300&family=Oswald:wght@300&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+.Admin-Edit-Project > h2{
+    font-family: 'Merriweather', serif;
+}
+
+.Admin-Edit-form{
+    background-color: #855050;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Admin-Edit-form > div {
+    margin: 5px;
+}
+
+.Admin-Project-Images {
+    background-color: yellow;
+    width: 100%;
+}

@@ -5,6 +5,7 @@ import CircleLoader from "react-spinners/CircleLoader";
 const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
 const AdminITSkillCard = lazy(() => import('./AdminITSkillCard'));
 const AdminOtherSkillCard = lazy(() => import('./AdminOtherSkillCard'));
+const AddProjectCard = lazy(() => import('./AddProjectCard'));
 
 export default function Admin() {
 
@@ -194,6 +195,7 @@ export default function Admin() {
             <div className={'CrudHolder'}>
                 <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
                     <div className={'Project-Holder'}>
+                        <AddProjectCard />
                         {projects && projects.map((proj) => 
                             <AdminProjectCard key={proj.id} proj={proj} />
                         )}

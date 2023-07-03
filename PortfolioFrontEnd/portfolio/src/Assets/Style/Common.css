@@ -918,12 +918,13 @@
     color: #295470;
 }
 
+/* Admin Edit project */
+
 .Admin-Edit-Project{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: #2bb717;
     margin-top: 10px;
 }
 
@@ -933,11 +934,13 @@
 }
 
 .Admin-Edit-form{
-    background-color: #855050;
     padding: 10px;
     margin: 10px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .Admin-Edit-form > div {
@@ -945,6 +948,107 @@
 }
 
 .Admin-Project-Images {
-    background-color: yellow;
     width: 100%;
+    font-family: 'Work Sans', sans-serif
+}
+
+.Admin-Project-Images img{
+    height: 150px;
+    width: 200px;
+    margin: 10px;
+}
+
+.Admin-Project-Images > tr{
+    display: flex;
+    align-items: center;
+}
+
+/* Admin Edit IT-Skill */
+.Admin-Edit-Skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Edit-Skill > h2{
+    font-family: 'Merriweather', serif;
+}
+
+.Admin-ITEdit-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Admin-ITEdit-form > div{
+    margin: 5px;
+}
+
+.Admin-Edit-OtherSkill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Edit-OtherSkill > h2{
+    font-family: 'Merriweather', serif;
+}
+
+.Admin-OtherEdit-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Admin-OtherEdit-form > div{
+    margin: 5px;
+}
+
+.Add-Project-Card{
+    border: 1px solid;
+    border-radius: 40px;
+    width: 14vmax;
+    height: 16vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    background: linear-gradient(
+        to bottom, #ffcccc, #ff9999
+    );
+}
+
+.Add-Project-Card > i {
+    color: gray;
+}
+
+.Add-Project-Card:hover {
+    color: rgb(60, 63, 250);
+    box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
+    transform: translateY(-1vmax);
+}
+
+.Add-Project-Card::before{
+    color: grey;
 }

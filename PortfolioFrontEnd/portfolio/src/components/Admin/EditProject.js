@@ -5,6 +5,11 @@ import { useParams } from 'react-router';
 export default function EditProject(){
     const {id} = useParams();
 
+    async function fetchProjectById() {
+        const {data} = await axios.post();
+        setProject(data);
+    }
+
     const [project, setProject] = useState({
         id: 1,
         projectTitle: "Advertisement Portal",
@@ -80,11 +85,11 @@ export default function EditProject(){
                 </div>
                 <div className={'group'}>
                     <label htmlFor={'projectRole'}>Role in the Project</label>
-                    <input type={'text'} className={'form-control'} id={'projectRole'} name={'projectRole'} vlaue={project.projectRole} onChange={HandleChanges} />
+                    <input type={'text'} className={'form-control'} id={'projectRole'} name={'projectRole'} value={project.projectRole} onChange={HandleChanges} />
                 </div>
                 <div className={'group'}>
                     <label htmlFor={'technologiesUsed'}>Technologies Used</label>
-                    <input type={'text'} className={'form-control'} id={'technologiesUsed'} name={'technologiesUsed'} vlaue={project.technologiesUsed} onChange={HandleChanges} />
+                    <input type={'text'} className={'form-control'} id={'technologiesUsed'} name={'technologiesUsed'} value={project.technologiesUsed} onChange={HandleChanges} />
                 </div>
                 <div className={'group'}>
                     <label htmlFor={'responsibility'}>Responsibility</label>
@@ -118,9 +123,18 @@ export default function EditProject(){
                             <th scope={'col'}>Image</th>
                             <th scope={'col'}>Image Name</th>
                             <th scope={'col'}>Image URL</th>
-                            <th scope={'col'}>Edit Image</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {project.images && project.images.map((image) =>
+                            <tr key={image.id}>
+                                <td >{image.id}</td>
+                                <td ><img src={image.imageURL} alt={image.imageName} /> </td>
+                                <td ><h4>{image.imageName}</h4></td>
+                                <td ><input type={'text'} className={'form-control'} id={'imageURL'} name={'imageURL'} value={image.imageURL} onChange={HandleChanges} /></td>
+                            </tr>
+                        )}
+                    </tbody>
                 </table>
             </div>
 

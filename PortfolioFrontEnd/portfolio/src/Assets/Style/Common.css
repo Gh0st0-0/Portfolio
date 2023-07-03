@@ -1035,7 +1035,7 @@
     transition: all 0.5s;
     padding-bottom: 0.5vmax;
     background: linear-gradient(
-        to bottom, #ffcccc, #ff9999
+        to bottom, yellow, orange
     );
 }
 
@@ -1051,4 +1051,63 @@
 
 .Add-Project-Card::before{
     color: grey;
+}
+
+.Admin-Add-Project{
+    display: flex;
+    flex-direction: column;
+    background-color: #ff328e;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Admin-Add-Project > h2{
+    font-family: 'Merriweather', serif;
+}
+
+.Admin-Add-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Admin-Add-form > div{
+    margin: 5px;
+}
+
+.Admin-Add-Images{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Admin-Add-Images > span {
+    margin: 10px;
+}
+
+.Admin-Image-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.Admin-Image-form > div{
+    margin: 10px;
+}
+
+.Admin-Image-form > button{
+    margin: 10px;
 }

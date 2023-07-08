@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ProjectController implements ImpProjectController {
 
 	private CandidateService candSer;
-	private ProjectService projServ;
+	private ProjectService projServ; 
 	private ProjectImageService imgServ;
 	private LinkObjects persist;
 
@@ -40,17 +40,17 @@ public class ProjectController implements ImpProjectController {
 
 	@Override
 	@PostMapping("/project/persist/getCand/{cand_id}")
-	public boolean ProjectPersist(@RequestBody Projects proj,@PathVariable long cand_id) {
+	public Projects ProjectPersist(@RequestBody Projects proj,@PathVariable long cand_id) {
 		Candidate cand = this.candSer.findCandidate(cand_id);
 		if(cand != null) {
 			log.info("Fetched the candidate to save the project: ", cand);
 			proj.setCand3(cand);
 			cand.addProject(this.projServ.saveProject(proj));
 			this.candSer.saveCandidate(cand);
-			return true;
+			return proj;
 		}else {
 			log.error("Failed to fetch the candidate: ", cand);
-			return false;
+			return null;
 		}
 	}
 

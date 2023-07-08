@@ -6,7 +6,7 @@ import com.app.ghost.model.ProjectImages;
 import com.app.ghost.model.Projects;
 
 public interface ImpProjectController {
-	boolean ProjectPersist(Projects proj, long cand_id);
+	Projects ProjectPersist(Projects proj, long cand_id);
 
 	Projects updateProject(Projects proj);
 

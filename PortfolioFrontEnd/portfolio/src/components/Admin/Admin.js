@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext, useEffect, useState, lazy, Suspense } from 'react';
 import CircleLoader from "react-spinners/CircleLoader";
+import {useNavigate} from "react-router-dom";
 
 const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
 const AdminITSkillCard = lazy(() => import('./AdminITSkillCard'));
@@ -8,6 +9,8 @@ const AdminOtherSkillCard = lazy(() => import('./AdminOtherSkillCard'));
 const AddProjectCard = lazy(() => import('./AddProjectCard'));
 
 export default function Admin() {
+
+    const navigate = useNavigate()
 
     const [projects, setProjects] = useState(
     [
@@ -237,7 +240,7 @@ export default function Admin() {
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-arrow-back' ></i>
-                            <span onClick={fetchAllProjects}>Log Out</span>
+                            <span onClick={()=> navigate('/cand_admin')}>Log Out</span>
                         </li>
                     </ul>
                 </nav>

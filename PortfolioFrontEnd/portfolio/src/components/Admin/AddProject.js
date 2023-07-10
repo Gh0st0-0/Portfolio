@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
 export default function AddProject(){
@@ -25,16 +26,38 @@ export default function AddProject(){
             imageURL: ""
         }
     )
+
+    const navigate = useNavigate()
+
+    async function persistProject(){
+        const {data} = await axios.post();
+        setProject(data);
+    }
     
     const HandleChanges = (event) =>{
         let {name, value} = event.target;
         setProject({...project, [name]: value})
     }
 
+    const HandleImageChanges = (event) =>{
+        let {name, value} = event.target;
+        setProjectImage({...projectImage, [name]: value})
+    }
+
+    async function persistProjectImage(){
+        const {data} = true;
+        // const {data} = await axios.post();
+        data && project.images.push(projectImage);
+    }
+
     // Add image to the project / check java method
 
     return (
         <div className={"Admin-Add-Project"}>
+            <div className={'Nav-In-Admin'}>
+                <i className='bx bx-left-arrow-alt bx-lg' onClick={()=> navigate('/cand_admin')}></i>
+                <i class='bx bx-log-out bx-lg' onClick={()=> navigate('/login')}></i>
+            </div>
             <h2>
                 Add Project
             </h2>
@@ -79,7 +102,7 @@ export default function AddProject(){
                         <input type={'number'} className={'form-control'} id={'projectDuration'} name={'projectDuration'} value={project.projectDuration} onChange={HandleChanges} />
                     </div>
                 </div>
-                <button className={'custom-button'}>Add</button>
+                <button className={'custom-button'}>Add Project</button>
             </div>
             {/* Add project images */}
             <div className={'Admin-Add-Images'}>
@@ -89,15 +112,37 @@ export default function AddProject(){
                     <div className={'row'}>
                         <div className={'group col-md-6'}>
                             <label htmlFor={'imageName'}>Image Name</label>
-                            <input type={'text'} className={'form-control'} id={'imageName'} name={'imageName'} value={projectImage.imageName} onChange={HandleChanges} />
+                            <input type={'text'} className={'form-control'} id={'imageName'} name={'imageName'} value={projectImage.imageName} onChange={HandleImageChanges} />
                         </div>
                         <div className={'group col-md-6'}>
                             <label htmlFor={'imageURL'} >Image URL</label>
-                            <input type={'text'} className={'form-control'} id={'imageURL'} name={'imageURL'} value={projectImage.imageURL} onChange={HandleChanges} />
+                            <input type={'text'} className={'form-control'} id={'imageURL'} name={'imageURL'} value={projectImage.imageURL} onChange={HandleImageChanges} />
                         </div>
                     </div>
-                    <button className={'btn btn-primary col-md-2'}>Add</button>
+                    <button className={'btn btn-primary col-md-2'}>Add Image</button>
                 </div>
+                {project.images && <div className={'Admin-Add-Project-Images table-responsive'}>
+                    <table className={'table'}>
+                        <thead>
+                            <tr>
+                                <th scope={'col'}>S. no.</th>
+                                <th scope={'col'}>Image</th>
+                                <th scope={'col'}>Image Name</th>
+                                <th scope={'col'}>Image URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {project.images && project.images.map((image) =>
+                                <tr key={image.id}>
+                                    <td >{image.id}</td>
+                                    <td ><img src={image.imageURL} alt={image.imageName} /> </td>
+                                    <td ><h4>{image.imageName}</h4></td>
+                                    <td ><input type={'text'} className={'form-control'} id={'imageURL'} name={'imageURL'} value={image.imageURL} onChange={HandleChanges} /></td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>}
             </div>
         </div>
     )

@@ -1056,14 +1056,23 @@
 .Admin-Add-Project{
     display: flex;
     flex-direction: column;
-    background-color: #ff328e;
     margin-top: 10px;
     justify-content: center;
-    align-items: center;
 }
 
 .Admin-Add-Project > h2{
     font-family: 'Merriweather', serif;
+    align-self: center;
+}
+
+.Nav-In-Admin{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Nav-In-Admin > i:hover{
+    color: gray;
+    animation: bounce 0.5s infinite;
 }
 
 .Admin-Add-form{
@@ -1075,6 +1084,7 @@
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
+    align-self: center;
 }
 
 .Admin-Add-form > div{
@@ -1109,5 +1119,21 @@
 }
 
 .Admin-Image-form > button{
+    margin: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.Admin-Add-Project-Images{
+    width: 100%;
+    font-family: 'Work Sans', sans-serif
+}
+.Admin-Add-Project-Images > tr{
+    display: flex;
+    align-items: center;
+}
+.Admin-Add-Project-Images img{
+    height: 150px;
+    width: 200px;
     margin: 10px;
 }

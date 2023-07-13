@@ -718,7 +718,7 @@
 
 .sidebar{
     width: 130px;
-    height: 100rem;
+    /* height: 100rem; */
     background: rgba(10,10,10,.65);
     box-shadow: 0 0px 32px rgb(2,4,24);
     backdrop-filter: blur(6px); 
@@ -1136,4 +1136,75 @@
     height: 150px;
     width: 200px;
     margin: 10px;
+}
+
+.Add-IT-Skill-Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: linear-gradient(
+        to bottom,  rgb(100, 241, 147), rgb(24, 172, 48)
+    );
+    padding: 15px;
+    width: 35rem;
+    height: 12rem;
+    margin: 10px;
+    margin-top: 65px;
+    border-radius: 30px;
+}
+.Add-IT-Skill-Card:hover{
+    box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
+    animation:  bounce 0.6s ease-in both;
+}
+
+.Admin-Add-Skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Add-Skill > h2{
+    font-family: 'Merriweather', serif;
+    align-self: center;
+}
+
+.Admin-Add-IT-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Admin-Add-IT-form > div{
+    margin: 5px;
+}
+
+.Add-Other-Skill-Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: linear-gradient(
+        to bottom,  rgb(143, 182, 214), rgb(54, 71, 117)
+    );
+    padding: 15px;
+    width: 35rem;
+    height: 12rem;
+    margin: 10px;
+    /* margin-top: 65px; */
+    border-radius: 30px;
+    border: black 2px solid;
+}
+
+.Add-Other-Skill-Card:hover{
+    box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
+    animation:  bounce 0.6s ease-in both;
 }

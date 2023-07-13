@@ -7,6 +7,8 @@ const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
 const AdminITSkillCard = lazy(() => import('./AdminITSkillCard'));
 const AdminOtherSkillCard = lazy(() => import('./AdminOtherSkillCard'));
 const AddProjectCard = lazy(() => import('./AddProjectCard'));
+const AddITSkillCard = lazy(() => import('./AddITSkillCard'));
+const AddOtherSkillCard = lazy(() => import('./AddOtherSkillCard'));
 
 export default function Admin() {
 
@@ -247,13 +249,16 @@ export default function Admin() {
             </div>
             <div className={'CrudHolder'}>
                 <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
-                    <div className={'Project-Holder'}>
+                    {projects && <div className={'Project-Holder'}>
                         <AddProjectCard />
                         {projects && projects.map((proj) => 
                             <AdminProjectCard key={proj.id} proj={proj} />
                         )}
-                    </div>
-                    <div className={'IT-Skill-Holder'}>
+                    </div>}
+                    {allTechs && <div className={'IT-Skill-Holder'}>
+                        <div>
+                            <AddITSkillCard />
+                        </div>
                         <div>
                             <h2>
                                 Language
@@ -284,12 +289,15 @@ export default function Admin() {
                                 )}
                             </div>
                         </div>
-                    </div>
-                    <div className={'Admin-OtherSkill-Container'}>
+                    </div>}
+                    {allOtherSkills && <div className={'Admin-OtherSkill-Container'}>
+                        <div>
+                            <AddOtherSkillCard />
+                        </div>
                         {allOtherSkills && allOtherSkills.map((skill) =>
                             <AdminOtherSkillCard key={skill.id} skill={skill} />
                         )}
-                    </div>
+                    </div>}
                 </Suspense>
             </div>
         </div>

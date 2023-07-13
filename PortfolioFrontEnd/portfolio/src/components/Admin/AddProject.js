@@ -56,7 +56,7 @@ export default function AddProject(){
         <div className={"Admin-Add-Project"}>
             <div className={'Nav-In-Admin'}>
                 <i className='bx bx-left-arrow-alt bx-lg' onClick={()=> navigate('/cand_admin')}></i>
-                <i class='bx bx-log-out bx-lg' onClick={()=> navigate('/login')}></i>
+                <i className='bx bx-log-out bx-lg' onClick={()=> navigate('/login')}></i>
             </div>
             <h2>
                 Add Project

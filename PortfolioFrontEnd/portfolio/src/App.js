@@ -31,6 +31,8 @@ const EditProject = lazy(() => import('./components/Admin/EditProject'));
 const EditITSkill = lazy(() => import('./components/Admin/EditITSkill'));
 const EditOtherSkill = lazy(() => import('./components/Admin/EditOtherSkill'));
 const AddProject = lazy(() => import('./components/Admin/AddProject'));
+const AddITSkill = lazy(() => import('./components/Admin/AddITSkill'));
+const AddOtherSkills = lazy(() => import('./components/Admin/AddOtherSkills'));
 
 export default function App() {
     return(
@@ -57,6 +59,8 @@ export default function App() {
                             <Route path={'/admin/getITSkill/:id'} element={<EditITSkill />}></Route>
                             <Route path={'/admin/getOtherSkill/:id'} element={<EditOtherSkill />}></Route>
                             <Route path={'/admin/add-project'} element={<AddProject />}></Route>
+                            <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
+                            <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>
                             {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                         </Routes>
                     </div>

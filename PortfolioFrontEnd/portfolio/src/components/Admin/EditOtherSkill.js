@@ -35,26 +35,27 @@ export default function EditOtherSkil(){
                 <div className={'row'}>
                     <div className={'group col-md-6'}>
                         <label htmlFor={'technologies'}>Technologies</label>
-                        <input type={'text'} className={'form-control'} id={'technologies'} value={otherSkill.technologies} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} id={'technologies'} name={'technologies'} value={otherSkill.technologies} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-6'}>
                         <label htmlFor={'version'}>Version</label>
-                        <input type={'text'} className={'form-control'} id={'version'} value={otherSkill.version} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} id={'version'} name={'version'} value={otherSkill.version} onChange={HandleChanges} />
                     </div>
                 </div>
                 <div className={'row'}>
                     <div className={'group col-md-8'}>
                         <label htmlFor={'iconsClass'}>Icon Class</label>
-                        <input type={'text'} className={'form-control'} id={'iconsClass'} value={otherSkill.iconsClass} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} id={'iconsClass'} name={'iconsClass'} value={otherSkill.iconsClass} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-4'}>
                         <label htmlFor={'score'}>Score</label>
-                        <select id={'score'} className={'form-control'} onChange={HandleChanges} >
+                        <select id={'score'} className={'form-control'} name={'score'} onChange={HandleChanges} >
                             <option selected>{otherSkill.score}</option>
                             {Array.from({ length: 10 }, (_, index) => (
                                 <option key={index + 1}>{index + 1}</option>
                             ))}
                         </select>
+                        
                     </div>
                 </div>
                 <button className={'custom-button'}>Edit</button>

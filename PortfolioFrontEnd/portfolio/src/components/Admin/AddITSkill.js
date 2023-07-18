@@ -39,21 +39,21 @@ export default function AddITSkill(){
                 <div className={'row'}>
                     <div className={'group col-md-6'}>
                         <label htmlFor={'technologies'}>Technology</label>
-                        <input type={'text'} className={'form-control'} id={'technology'} value={itSkill.technologies} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} name={'technologies'} id={'technology'} value={itSkill.technologies} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-6'}>
                         <label htmlFor={'version'}>Version</label>
-                        <input type={'text'} className={'form-control'} id={'version'} value={itSkill.version} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} name={'version'} id={'version'} value={itSkill.version} onChange={HandleChanges} />
                     </div>
                 </div>
                 <div className={'row'}>
                     <div className={'group col-md-6'}>
                         <label htmlFor={'iconsClass'}>Icon Class</label>
-                        <input type={'text'} className={'form-control'} id={'iconsClass'} value={itSkill.iconsClass} onChange={HandleChanges} />
+                        <input type={'text'} className={'form-control'} name={'iconsClass'} id={'iconsClass'} value={itSkill.iconsClass} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-4'}>
                         <label htmlFor={'category'}>Category</label>
-                        <select id={'category'} className={'form-control'} onChange={HandleChanges} >
+                        <select id={'category'} name={'category'} className={'form-control'} onChange={HandleChanges} >
                             <option selected >{itSkill.category}</option>
                             <option value={'Language'}>Language</option>
                             <option value={'DataBase'}>DataBase</option>
@@ -62,7 +62,7 @@ export default function AddITSkill(){
                     </div>
                     <div className={'group col-md-2'}>
                         <label htmlFor={'score'}>Score</label>
-                        <select id={'score'} className={'form-control'} onChange={HandleChanges} >
+                        <select name={'score'} id={'score'} className={'form-control'} onChange={HandleChanges} >
                             <option selected>{itSkill.score}</option>
                             {Array.from({ length: 10 }, (_, index) => (
                                 <option key={index + 1}>{index + 1}</option>

@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Testimoney extends BaseEntity {
 	@Column
-	private String messgge;
+	private boolean showAtTop;
 	@Column
 	private String name;
 	@Column
 	private String designation;
 	@Column
-	private boolean showAtTop;
+	private String message;
 }

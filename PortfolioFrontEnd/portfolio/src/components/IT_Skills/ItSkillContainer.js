@@ -42,7 +42,6 @@ export default function ItSkillContainer() {
 
     async function fetchAllTechnologies () {
         const {data} = await axios.get("http://localhost:8080/itskill/fetchList/getcand/1");
-        console.log(data);
         setAllTechs(data);
     }
 

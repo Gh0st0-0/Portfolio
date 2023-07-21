@@ -241,6 +241,10 @@ export default function Admin() {
                             <span onClick={fetchAllOtherSkill}>All Non-IT-Skills</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
+                            <i className='bx bx-receipt' ></i>
+                            <span onClick={()=> navigate('/admin/manage-testimonies')}>Testimonies</span>
+                        </li>
+                        <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-arrow-back' ></i>
                             <span onClick={()=> navigate('/cand_admin')}>Log Out</span>
                         </li>

@@ -1215,7 +1215,6 @@
     justify-content: space-around;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: gray;
 }
 
 .Admin-Add-OtherSkill > h2{
@@ -1238,3 +1237,125 @@
 .Admin-Add-Other-form > div{
     margin: 5px;
 }
+
+/* Testimoney component */
+.Testi-Container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.Testi-Container > h2{
+    align-self: center;
+    font-family: 'Merriweather', serif;
+}
+
+.Cntainer-Holder{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around
+}
+
+.Testi-Card{
+    height: 250px;
+    width: 500px;
+    background: linear-gradient(
+        to bottom right,  rgb(143, 182, 214), rgb(255, 255, 255)
+    );
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.Testi-Card .Designation-Holder{
+    display: flex;
+    flex-direction: column;
+}
+
+.Testi-Card > span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Admin-Manage-Testimoney{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Manage-Testimoney > h2 {
+    font-family: 'Merriweather', serif;
+    align-self: center;
+}
+
+.Admin-Manage-Testimoney > i{
+    align-self: center;
+}
+.Admin-Manage-Testimoney > i:hover{
+    color: green;
+}
+
+/* Set cursor to pointer when hovering over the trash icon */
+.bx.bxs-trash {
+cursor: pointer;
+}
+
+
+/* Toggle test */
+.toggle-slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide the default checkbox */
+  .toggle-slider input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Create the slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  /* Style when toggled */
+  .slider:checked {
+    background-color: #2196f3;
+  }
+  
+  .slider:checked:before {
+    transform: translateX(26px);
+  }
+  
+  /* Optional styling for the label */
+  .slider-label {
+    top: 8px;
+    left: 70px; /* Adjust this value based on your needs */
+    font-size: 16px;
+    font-weight: bold;
+  }

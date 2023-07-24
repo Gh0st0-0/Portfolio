@@ -20,12 +20,18 @@ public class ITSkillService implements IItSkillsService {
 		this.itSRepo = itSRepo;
 	}
 
+	/*
+	 * get the list of all the it skills and return it
+	 */
 	@Override
 	public List<ITSkills> getAllITSkills() {
 		log.info("List of Skills is returned", LocalDate.now());
 		return this.itSRepo.findAll();
 	}
 
+	/*
+	 * find the particular ItSkill using id
+	 */
 	@Override
 	public ITSkills findITSkillById(long id) {
 		ITSkills skill = this.itSRepo.findById(id).orElse(null);
@@ -38,11 +44,17 @@ public class ITSkillService implements IItSkillsService {
 		}
 	}
 
+	/*
+	 * Persist the itSkill and return the saved object
+	 */
 	@Override
 	public ITSkills saveITSkill(ITSkills newSkill) {
 		return this.itSRepo.save(newSkill);
 	}
 
+	/*
+	 * update the it skill and return the updated object
+	 */
 	@Override
 	public ITSkills updateITSkill(ITSkills update) {
 		ITSkills skill = this.itSRepo.findById(update.getId()).orElse(null);
@@ -60,6 +72,9 @@ public class ITSkillService implements IItSkillsService {
 		}
 	}
 
+	/*
+	 * delete the It Skill from the list and return the deleted object
+	 */
 	@Override
 	public ITSkills deleteITSkillById(long id) {
 		ITSkills skill = this.itSRepo.findById(id).orElse(null);

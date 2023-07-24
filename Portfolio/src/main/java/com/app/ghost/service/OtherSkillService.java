@@ -20,12 +20,18 @@ public class OtherSkillService implements IOtherSkillService {
 		this.oSkillRepo = oSkillRepo;
 	}
 
+	/*
+	 * get the list of all the other skills and return it
+	 */
 	@Override
 	public List<OtherSkills> getAllOtherSkills() {
 		log.info("List of Skills is returned", LocalDate.now());
 		return this.oSkillRepo.findAll();
 	}
 
+	/*
+	 * find the particular other Skill using id
+	 */
 	@Override
 	public OtherSkills findOtherSkillById(long id) {
 		OtherSkills skill = this.oSkillRepo.findById(id).orElse(null);
@@ -38,11 +44,17 @@ public class OtherSkillService implements IOtherSkillService {
 		}
 	}
 
+	/*
+	 * Persist the other Skill and return the saved object
+	 */
 	@Override
 	public OtherSkills saveOtherSkill(OtherSkills newSkill) {
 		return this.oSkillRepo.save(newSkill);
 	}
 
+	/*
+	 * update the other skill and return the updated object
+	 */
 	@Override
 	public OtherSkills updateOtherSkill(OtherSkills update) {
 		OtherSkills skill = this.oSkillRepo.findById(update.getId()).orElse(null);
@@ -59,6 +71,9 @@ public class OtherSkillService implements IOtherSkillService {
 		}
 	}
 
+	/*
+	 * delete the other Skill from the list and return the deleted object
+	 */
 	@Override
 	public OtherSkills deleteOtherSkillById(long id) {
 		OtherSkills skill = this.oSkillRepo.findById(id).orElse(null);

@@ -24,31 +24,43 @@ public class ProjectService implements IProjectService {
 		this.proImRepo = proImRepo;
 	}
 
+	/*
+	 * return the list of project
+	 */
 	@Override
 	public List<Projects> findAllProjects() {
 		return this.projRepo.findAll();
 	}
 
+	/*
+	 * find particular project and return it if failed return null
+	 */
 	@Override
 	public Projects findProjectById(long id) {
 		Projects proj = this.projRepo.findById(id).orElse(null);
-		if(proj != null) {
+		if (proj != null) {
 			log.info("Fetching Project Returns: ", proj);
-		}else {
+		} else {
 			log.error("Fetching Project Returns: ", proj);
 		}
 		return proj;
 	}
 
+	/*
+	 * Persist the Project and return the saved object
+	 */
 	@Override
 	public Projects saveProject(Projects newProject) {
 		return this.projRepo.save(newProject);
 	}
 
+	/*
+	 * Update the project and return the updated object on failure return null
+	 */
 	@Override
 	public Projects updateProject(Projects update) {
 		Projects proj = this.projRepo.findById(update.getId()).orElse(null);
-		if(proj != null) {
+		if (proj != null) {
 			proj.setProjectTitle(update.getProjectTitle());
 			proj.setAffeleatedCompany(update.getAffeleatedCompany());
 			proj.setDiscription(update.getDiscription());
@@ -61,65 +73,74 @@ public class ProjectService implements IProjectService {
 			proj.setTechnologiesUsed(update.getTechnologiesUsed());
 			log.info("Project updatef", LocalDate.now(), proj);
 			return proj;
-		}else {
+		} else {
 			log.error("Error in fetching project for update: ", LocalDate.now(), proj);
 			return proj;
 		}
 	}
 
+	/*
+	 * delete the project by id and return the deleted object, null on failure
+	 */
 	@Override
 	public Projects deleteProjectById(long id) {
 		Projects proj = this.projRepo.findById(id).orElse(null);
-		if(proj != null) {
+		if (proj != null) {
 			log.info("Deleting the project: ", LocalDate.now(), proj);
 			this.projRepo.delete(proj);
 			return proj;
-		}else {
+		} else {
 			log.error("Project with id " + id + " doesnot exists and returns ", LocalDate.now(), proj);
 			return proj;
 		}
 	}
 
+	/*
+	 * Add images to the project object and return the project object on success and
+	 * null on failure
+	 */
 	@Override
 	public Projects addProjectImages(ProjectImages urls, long id) {
 		Projects proj = this.projRepo.findById(id).orElse(null);
-		if(proj != null) {
+		if (proj != null) {
 			log.info("Project is fetched and image is being added", LocalDate.now(), proj);
-			if(proj.addImage(urls)) {
+			if (proj.addImage(urls)) {
 				log.info("Image Added successfully to the project", LocalDate.now(), proj);
 				this.projRepo.save(proj);
-				return proj; 
-			}else {
+				return proj;
+			} else {
 				log.error("Error in saving the image", LocalDate.now(), proj);
 				return null;
 			}
-		}else {
+		} else {
 			log.error("Error in Fetching the project", LocalDate.now(), proj);
 			return proj;
 		}
 	}
 
+	/*
+	 * Remove the project image from the list of images and return the project
+	 * object
+	 */
 	@Override
 	public Projects removeProjectImage(long projectId, long imageId) {
 		Projects proj = this.projRepo.findById(projectId).orElse(null);
-		if(proj != null) {
+		if (proj != null) {
 			log.info("Project Found to remove Image", LocalDate.now(), proj);
 			ProjectImages pi = this.proImRepo.findById(imageId).orElse(null);
-			if(pi != null) {
-				if(proj.removeImage(pi)) {
+			if (pi != null) {
+				if (proj.removeImage(pi)) {
 					log.info("Image REmoved Successfully", LocalDate.now(), proj);
-				}else {
+				} else {
 					log.error("Failed to remove image", LocalDate.now(), pi);
 				}
-			}else {
+			} else {
 				log.error("Image to be deleted not found", LocalDate.now(), pi);
 			}
-		}else {
+		} else {
 			log.error("Project to delete image is not found", LocalDate.now(), proj);
 		}
 		return proj;
 	}
 
-	
-	
 }

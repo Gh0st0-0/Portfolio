@@ -19,12 +19,18 @@ public class CredentialsService implements ICredentialsService {
 		this.credRepo = credRepo;
 	}
 
+	/*
+	 * Persist Credentials and return the credentials object
+	 */
 	@Override
 	public Credentials saveCreds(Credentials credNew) {
 		log.info("Saved the credentials: ", LocalDate.now(), credNew);
 		return this.credRepo.save(credNew);
 	}
 
+	/*
+	 * update the credentials and return the updated objects
+	 */
 	@Override
 	public Credentials updateCreds(Credentials updated) {
 		Credentials cred = this.credRepo.findById(updated.getId()).orElse(null);
@@ -43,6 +49,9 @@ public class CredentialsService implements ICredentialsService {
 		}
 	}
 
+	/*
+	 * Find credentials from the given id
+	 */
 	@Override
 	public Credentials findCreds(long id) {
 		// throws Custom Exception

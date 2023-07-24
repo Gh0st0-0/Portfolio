@@ -16,39 +16,41 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity
-@Data
-@EqualsAndHashCode(callSuper = false)
-@NoArgsConstructor
-@Table(name = "candidate")
+@Entity // To specify that this class is an entity
+@Data // From Lombok
+@EqualsAndHashCode(callSuper = false) // prevent the equals and hash code of the super class from being called
+@NoArgsConstructor // Lombok generate a parameterless constructor
+@Table(name = "candidate") // Specify the properties and attributes of the table
 public class Candidate extends BaseEntity {
 	// Fields
 	@Column(name="username")
-	private String userName;
+	private String userName; // Stores the userName
 	
 	@Column
-	private String password;
+	private String password; // Stores the password 
 	
 	@Column(name="first_name")
-	private String firstName;
+	private String firstName; // Stores the first name
 	
 	@Column(name="middle_name")
-	private String middleName;
+	private String middleName; // Stores the middle name
 	
 	@Column(name="last_name")
-	private String lastName;
+	private String lastName; // Stores the last name
 	
 	@Column(name="current_location")
-	private String currentWorkingLocation;
+	private String currentWorkingLocation; // Stores the current working locations
 	
 	@Column
-	private String roll;
+	private String roll; // Stores the roll
+	
+	// Associated fields
 	
 	@ToString.Exclude
-	@OneToOne(cascade = CascadeType.ALL) // the company with which the custome is affileated is mapped 1 to 1 as 1
+	@OneToOne(cascade = CascadeType.ALL) // the company with which the custom is affiliated is mapped 1 to 1 as 1
 										// customer belong to 1 company
 	@JoinColumn(name = "creds_id")
-	private Credentials creds;
+	private Credentials creds; 
 	
 	@ToString.Exclude
 	@OneToMany(mappedBy = "cand")

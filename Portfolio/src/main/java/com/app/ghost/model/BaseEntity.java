@@ -8,11 +8,11 @@ import javax.persistence.MappedSuperclass;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@MappedSuperclass
-@NoArgsConstructor
-public class BaseEntity {
+@Data // from Lombok
+@MappedSuperclass // Allows the mapping info of this class to be applied to its sub-classes
+@NoArgsConstructor // Lombok anotation to generate a parameterless constructor
+public class BaseEntity { // This class provide the Primary-key id for all the Models
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto increment id
 	private long id;
 }

@@ -9,6 +9,8 @@ export default function OpenProject() {
     // Dummy test for animation  Start
     const [scrollY, setScrollY] = useState(0);
     useEffect(()=>{
+        console.log({id});
+        fetchProject();
         const handleScroll = () => {
             setScrollY(window.scrollY);
         };
@@ -23,64 +25,65 @@ export default function OpenProject() {
     
 
     // Dummy data is used, replaced by an axios call
-    const [porject, setProject] = useState(
-        {
-            id: 1,
-            projectTitle: "Advertisement Portal",
-            affeleatedCompany: "Sunbeam-Infotech",
-            discription: "My website serves as a marketing portal, connecting companies with diverse packages and plans to promote their products. It offers advertising opportunities for submitted products, aiding in effective marketing strategies.",
-            releventLinks: "#",
-            projectStartDate: "2023-02-20",
-            projectEndDate: "2023-03-15",
-            projectDuration: 4,
-            projectRole: "Project Lead and Fullstack Developer",
-            responsibility: "Responsible for leading the team, overseeing project, and executing tasks. Proficient in front-end(HTML,CSS,JS) & back-end(Java,Node.js) development. Ensuring quality, and timely delivery.",
-            images: [
-                {
-                    id: 1,
-                    imageName: "RavenAdverts_HomePage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/HomePage.jpeg?updatedAt=1686480413130"
-                },
-                {
-                    id: 2,
-                    imageName: "RavenAdverts_ClientPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerLandingPageAfterAddingProduct.jpeg?updatedAt=1686480413140"
-                },
+    const [porject, setProject] = useState({});
+    // const [porject, setProject] = useState(
+    //     {
+    //         id: 1,
+    //         projectTitle: "Advertisement Portal",
+    //         affeleatedCompany: "Sunbeam-Infotech",
+    //         discription: "My website serves as a marketing portal, connecting companies with diverse packages and plans to promote their products. It offers advertising opportunities for submitted products, aiding in effective marketing strategies.",
+    //         releventLinks: "#",
+    //         projectStartDate: "2023-02-20",
+    //         projectEndDate: "2023-03-15",
+    //         projectDuration: 4,
+    //         projectRole: "Project Lead and Fullstack Developer",
+    //         responsibility: "Responsible for leading the team, overseeing project, and executing tasks. Proficient in front-end(HTML,CSS,JS) & back-end(Java,Node.js) development. Ensuring quality, and timely delivery.",
+    //         images: [
+    //             {
+    //                 id: 1,
+    //                 imageName: "RavenAdverts_HomePage",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/HomePage.jpeg?updatedAt=1686480413130"
+    //             },
+    //             {
+    //                 id: 2,
+    //                 imageName: "RavenAdverts_ClientPage",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerLandingPageAfterAddingProduct.jpeg?updatedAt=1686480413140"
+    //             },
                 
-                {
-                    id: 3,
-                    imageName: "RavenAdverts_RegisterationPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerRegistration.jpeg?updatedAt=1686480413055"
-                },
-                {
-                    id: 4,
-                    imageName: "RavenAdverts_LoginPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/LoginPage.jpeg?updatedAt=1686480413054"
-                },
-                {
-                    id: 5,
-                    imageName: "RavenAdverts_CustomerPaymentPortal",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerPaymentPortal.jpeg?updatedAt=1686480413205"
-                },
-                {
-                    id: 6,
-                    imageName: "RavenAdverts_CustomerBill",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerBill.jpeg?updatedAt=1686480413021"
-                },
-                {
-                    id: 7,
-                    imageName: "RavenAdverts_AdminPage",
-                    imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/AdminCrudOfCustomer.jpeg?updatedAt=1686480413137"
-                }
+    //             {
+    //                 id: 3,
+    //                 imageName: "RavenAdverts_RegisterationPage",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerRegistration.jpeg?updatedAt=1686480413055"
+    //             },
+    //             {
+    //                 id: 4,
+    //                 imageName: "RavenAdverts_LoginPage",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/LoginPage.jpeg?updatedAt=1686480413054"
+    //             },
+    //             {
+    //                 id: 5,
+    //                 imageName: "RavenAdverts_CustomerPaymentPortal",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerPaymentPortal.jpeg?updatedAt=1686480413205"
+    //             },
+    //             {
+    //                 id: 6,
+    //                 imageName: "RavenAdverts_CustomerBill",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/CustomerBill.jpeg?updatedAt=1686480413021"
+    //             },
+    //             {
+    //                 id: 7,
+    //                 imageName: "RavenAdverts_AdminPage",
+    //                 imageURL: "https://ik.imagekit.io/vrchd4vczr/RavenAdverts/AdminCrudOfCustomer.jpeg?updatedAt=1686480413137"
+    //             }
                 
-            ],
-            technologiesUsed: "Java, J2EE, React JS, Node JS, JavaScript, CSS"
-        }
-    );
+    //         ],
+    //         technologiesUsed: "Java, J2EE, React JS, Node JS, JavaScript, CSS"
+    //     }
+    // );
 
     async function fetchProject() {
-        // const {data} = await axios.post('http://localhost:8080/project/getProject/${id}')
-        // setProject(data);
+        const {data} = await axios.post(`http://localhost:8080/project/getProject/${id}`);
+        setProject(data);
     }
 
     // useEffect(() => {

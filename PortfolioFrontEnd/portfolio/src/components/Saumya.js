@@ -1,4 +1,4 @@
-import React, { lazy, Suspense  } from 'react';
+import React, { Suspense  } from 'react';
 import { useContext, useEffect, useState } from 'react';
 import CandidateContext from '../components/CandidateContext';
 import saumya from '../Assets/Images/saumya.jpg';
@@ -7,53 +7,55 @@ import CircleLoader from "react-spinners/CircleLoader";
 import {Link} from "react-router-dom";
 
 
-const Login = lazy(() => import('./Admin/Login'));
+// const Login = lazy(() => import('./Admin/Login'));
 
 export default function Saumya(){
 
-    // const {candidate, setCandidate} = useContext(CandidateContext);
-    const [candidate, setCandidate] = useState(
-        {
-            id: 1,
-            userName: "Gh0st",
-            password: "Saumya@123546",
-            firstName: "Saumya",
-            middleName: "*",
-            lastName: "Garg",
-            currentWorkingLocation: "Pune Maharashtra",
-            roll: "Full-Stack-Developer"
-        }
-    )
+    // const [candidate, setCandidate] = useState(
+    //     {
+    //         id: 1,
+    //         userName: "Gh0st",
+    //         password: "Saumya@123546",
+    //         firstName: "Saumya",
+    //         middleName: "*",
+    //         lastName: "Garg",
+    //         currentWorkingLocation: "Pune Maharashtra",
+    //         roll: "Full-Stack-Developer"
+    //     }
+    // )
+    
+    // {
+    //     id: 1,
+    //     primaryNo: "+91-9993522409",
+    //     secondryNo: "+91-9425410221",
+    //     email: "saumyagwl98@gmail.com",
+    //     linkedin: "https://www.linkedin.com/in/saumya-garg-693534173/",
+    //     hackerRank: "https://www.hackerrank.com/saumyagwl98?hr_r=1"
+    // }
+                
+    const {candidate, setCandidate} = useContext(CandidateContext);
+    const [credentials, setCredentials] = useState({});
+    
 
-    const [credentials, setCredentials] = useState(
-        {
-            id: 1,
-            primaryNo: "+91-9993522409",
-            secondryNo: "+91-9425410221",
-            email: "saumyagwl98@gmail.com",
-            linkedin: "https://www.linkedin.com/in/saumya-garg-693534173/",
-            hackerRank: "https://www.hackerrank.com/saumyagwl98?hr_r=1"
-        }
-    );
 
     async function fetchCandidate() {
         const {data} = await axios.get("http://localhost:8080/candidate/getcandidate/1");
-        console.log(data);
+        // console.log(data);
         setCandidate(data);
     }
 
     async function fetchCredentials(){
         const {data} = await axios.get("http://localhost:8080/credentials/getcreds/1");
-        console.log(data);
+        // console.log(data);
         setCredentials(data);
     }
 
-    // useEffect(
-    //     () => {
-    //         fetchCandidate();
-    //         fetchCredentials();
-    //     }
-    //     ,[]);
+    useEffect(
+        () => {
+            fetchCandidate();
+            fetchCredentials();
+        }
+    ,[]);
 
     return (
         <div className={'SaumyaContainer'}>
@@ -86,7 +88,7 @@ export default function Saumya(){
                         {credentials.secondryNo}
                     </p>
                 </div>
-                <a href='#'>
+                <a href='/#'>
                     <i className='bx bxl-gmail bx-flashing' ></i> {credentials.email}
                 </a>
                 

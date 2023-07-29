@@ -10,35 +10,8 @@ const ITCard = lazy(() => import('./ITCard'));
 export default function ItSkillContainer() {
 
 
-    // const [allTechs,setAllTechs] = useState([])
-    const [allTechs,setAllTechs] = useState(
-        [
-    		{
-        		id: 1,
-        		technologies: "Core Java",
-        		version: "11",
-        		score: "7",
-        		iconsClass: "bx bxl-java bx-border bx-lg",
-                category: "Language"
-    		},
-    		{
-        		id: 2,
-        		technologies: "MySQL",
-        		version: "8.0 C.E.",
-        		score: "6",
-        		iconsClass: "bx bxs-data bx-border bx-lg",
-                category: "DataBase"
-    		},
-    		{
-        		id: 3,
-        		technologies: "HTML",
-        		version: "5",
-        		score: "7",
-        		iconsClass: "bx bxl-html5 bx-border bx-lg",
-                category: "WebTechnology"
-    		}
-	    ]
-    )
+    const [allTechs,setAllTechs] = useState([])
+    
 
     async function fetchAllTechnologies () {
         const {data} = await axios.get("http://localhost:8080/itskill/fetchList/getcand/1");
@@ -46,7 +19,7 @@ export default function ItSkillContainer() {
     }
 
     useEffect(() =>{
-        // fetchAllTechnologies ()
+        fetchAllTechnologies()
     },[]);
 
     return(
@@ -88,3 +61,32 @@ export default function ItSkillContainer() {
         
     )
 }
+
+// const [allTechs,setAllTechs] = useState(
+    //     [
+    // 		{
+    //     		id: 1,
+    //     		technologies: "Core Java",
+    //     		version: "11",
+    //     		score: "7",
+    //     		iconsClass: "bx bxl-java bx-border bx-lg",
+    //             category: "Language"
+    // 		},
+    // 		{
+    //     		id: 2,
+    //     		technologies: "MySQL",
+    //     		version: "8.0 C.E.",
+    //     		score: "6",
+    //     		iconsClass: "bx bxs-data bx-border bx-lg",
+    //             category: "DataBase"
+    // 		},
+    // 		{
+    //     		id: 3,
+    //     		technologies: "HTML",
+    //     		version: "5",
+    //     		score: "7",
+    //     		iconsClass: "bx bxl-html5 bx-border bx-lg",
+    //             category: "WebTechnology"
+    // 		}
+	//     ]
+    // )

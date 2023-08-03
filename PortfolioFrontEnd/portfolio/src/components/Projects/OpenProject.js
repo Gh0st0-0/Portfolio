@@ -1,20 +1,29 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 
 export default function OpenProject() {
-    const { id } = useParams();
+    const { _id } = useParams();
 
-    async function fetchProject() {
-        const {data} = await axios.post(`http://localhost:8080/project/getProject/${id}`);
-        setProject(data);
+    async function fetchProject (id) {
+        try{
+            const {data} = await axios.post(`http://localhost:8080/project/getProject/${id}`);
+            setProject(data);
+        }catch(error){
+            console.error('Error fetching project: ', error);
+        }
+    }
+
+    function checkId(){
+        const pathName = window.location.pathname;
+        const id = pathName.split('/').pop();
+        console.log(id);
+        return id;
     }
     // Dummy test for animation  Start
     const [scrollY, setScrollY] = useState(0);
     useEffect(()=>{
-        console.log(`${id}`);
-        fetchProject();
         const handleScroll = () => {
             setScrollY(window.scrollY);
         };
@@ -30,14 +39,10 @@ export default function OpenProject() {
     // Dummy data is used, replaced by an axios call
     const [porject, setProject] = useState({});
 
-    // async function fetchProject() {
-    //     const {data} = await axios.post(`http://localhost:8080/project/getProject/${id}`);
-    //     setProject(data);
-    // }
-
-    // useEffect(() => {
-    //     // fetchProject();
-    // },[])
+    useEffect(() => {
+        if(_id === checkId())
+            fetchProject(_id);
+    },[_id])
     
 
     return (

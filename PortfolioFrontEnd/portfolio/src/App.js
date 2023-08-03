@@ -52,7 +52,7 @@ export default function App() {
                         <Routes>
                             <Route path={'/'} element={<ProjectContainer/>}></Route>
                             <Route path={'/project'} element={<ProjectContainer/>}></Route>
-                            <Route path={`/project/getProject/{id}`} element={<OpenProject/>}></Route>
+                            <Route path={"/project/getProject/{id}"} element={<OpenProject/>}></Route>
                             <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
                             <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
                             <Route path={'/login'} element={<Login />}></Route>

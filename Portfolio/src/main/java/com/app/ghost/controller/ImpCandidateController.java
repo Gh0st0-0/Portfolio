@@ -9,5 +9,5 @@ public interface ImpCandidateController {
 
 	Candidate candidateUpdated(Candidate updated);
 	
-	Candidate login(Candidate logcan);
+	boolean login(Candidate logcan);
 }

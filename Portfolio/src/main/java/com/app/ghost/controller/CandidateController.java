@@ -67,14 +67,15 @@ public class CandidateController implements ImpCandidateController {
 
 	@Override
 	@PostMapping("/candidate/login")
-	public Candidate login(@RequestBody Candidate logcan) {
+	public boolean login(@RequestBody Candidate logcan) {
 		Candidate logCandidate = this.candSer.loginByUsernameAndPassword(logcan.getUserName(), logcan.getPassword());
 		if(logCandidate != null) {
 			log.info("Successful login", LocalDate.now(), logCandidate);
+			return true;
 		}else {
 			log.error("Unsuccessful login", LocalDate.now(), logCandidate);
+			return false;
 		}
-		return logCandidate;
 	}
 
 }

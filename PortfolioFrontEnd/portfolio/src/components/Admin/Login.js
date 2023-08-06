@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {  useState } from 'react';
 import {useNavigate} from "react-router-dom";
 import whoareyou from "../../Assets/Images/LoginPage/whoareyou.jpg";
@@ -18,9 +18,7 @@ export default function Login() {
         userName: "",
         password: ""
     })
-    const [message, setMessage] = useState({
-        failuremessage: "Message Check"
-    })
+    const [message, setMessage] = useState("")
     const [failureImages] = useState({
         images: [
             {
@@ -37,19 +35,24 @@ export default function Login() {
             }
         ]
     })
+    
+    async function validate_login(){
+        try{
+            const {data} = await axios.post("http://localhost:8080/candidate/login",loginCreds);
+            if(data)
+                navigate("/cand_admin");
+            else
+                reset();
+        } catch(error){
+            throw error;
+        }
+    }
+    
     const navigate = useNavigate()
 
-    async function validate_login(){
-        const {data} = await axios.post("http://localhost:8080/candidate/login",loginCreds);
-        if(data != null)
-            navigate("/cand_admin");
-        else
-            reset();
-    }
-
     const reset = () => {
-        setMessage("Invalid Credentials")
-        setLoginCreds(failure)
+        setMessage("Invalid Credentials");
+        setLoginCreds(failure);
     }
 
     function RandomNumberGenerator() {
@@ -62,6 +65,10 @@ export default function Login() {
         let {name, value} = event.target;
         setLoginCreds({...loginCreds, [name]: value})
     }
+
+    useEffect(() => {
+        console.log("Retry");
+    },[message]);
 
     return(
         <div className={'login row'}>
@@ -80,11 +87,11 @@ export default function Login() {
                                 <input type="password" className="form-control" id="password" name={'password'} value={loginCreds.password} onChange={HandleChanges} />
                             </div>
                         </div>
-                        <button className={'custom-button'} onClick={validate_login} >Login</button>
+                        <button className={'custom-button'} onClick={() => validate_login()} >Login</button>
                     </div>
                 </div>
-                {message.failuremessage && <div style={{color: 'black', margin: '100px', opacity:'60%'}}>
-                    <h1>{message.failuremessage}</h1>
+                {message && <div style={{color: 'black', margin: '100px', opacity:'60%'}}>
+                    <h1>{message}</h1>
                     <img src={failureImages.images[RandomNumberGenerator()].src} loading='lazy' alt={failureImages.images[RandomNumberGenerator()].alt} />
                 </div>}
             </div>

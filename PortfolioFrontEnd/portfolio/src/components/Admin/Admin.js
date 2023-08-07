@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, lazy, Suspense } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import CircleLoader from "react-spinners/CircleLoader";
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
@@ -21,6 +21,12 @@ export default function Admin() {
     const [allTechs,setAllTechs] = useState([]);
 
     const [allOtherSkills, setAllOtherSkills] = useState([]);
+
+    useEffect(() => {
+        setAllOtherSkills(null);
+        setAllTechs(null);
+        setProjects(null);
+    },[]);
 
     async function fetchAllProjects() {
         // fetch product and set everything else as null

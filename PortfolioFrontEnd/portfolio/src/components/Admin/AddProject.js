@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import React, { useEffect, useState } from 'react';
+import {toast} from 'react-toastify';
 
 export default function AddProject(){
 
@@ -30,8 +31,13 @@ export default function AddProject(){
     const navigate = useNavigate()
 
     async function persistProject(){
-        const {data} = await axios.post();
+        const {data} = await axios.post("http://localhost:8080/project/persist/getCand/1");
         setProject(data);
+        if(data != null){
+            notify();
+        }else{
+            failure();
+        }
     }
     
     const HandleChanges = (event) =>{
@@ -45,9 +51,40 @@ export default function AddProject(){
     }
 
     async function persistProjectImage(){
-        const {data} = true;
-        // const {data} = await axios.post();
+        const {data} = await axios.post(`http://localhost:8080/project/image/getProject/${project.id}`);
         data && project.images.push(projectImage);
+        if(data)
+            notify();
+        else
+            failure()
+    }
+
+    const notify = () =>{
+        toast.success('Object added Successfully.', {
+            position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            }
+        );
+    }
+
+    const failure = () => {
+        toast.error('Failed to add object. Try Again.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            }
+        );
     }
 
     // Add image to the project / check java method
@@ -102,7 +139,7 @@ export default function AddProject(){
                         <input type={'number'} className={'form-control'} id={'projectDuration'} name={'projectDuration'} value={project.projectDuration} onChange={HandleChanges} />
                     </div>
                 </div>
-                <button className={'custom-button'}>Add Project</button>
+                <button className={'custom-button'} onClick={persistProject} >Add Project</button>
             </div>
             {/* Add project images */}
             <div className={'Admin-Add-Images'}>
@@ -119,7 +156,7 @@ export default function AddProject(){
                             <input type={'text'} className={'form-control'} id={'imageURL'} name={'imageURL'} value={projectImage.imageURL} onChange={HandleImageChanges} />
                         </div>
                     </div>
-                    <button className={'btn btn-primary col-md-2'}>Add Image</button>
+                    <button className={'btn btn-primary col-md-2'} onClick={persistProjectImage}>Add Image</button>
                 </div>
                 {project.images && <div className={'Admin-Add-Project-Images table-responsive'}>
                     <table className={'table'}>

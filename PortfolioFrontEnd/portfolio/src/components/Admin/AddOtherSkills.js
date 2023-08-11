@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import React, { useEffect, useState } from 'react';
+import {toast} from 'react-toastify';
 
 export default function AddOtherSkills(){
     const navigate = useNavigate();
@@ -21,6 +22,21 @@ export default function AddOtherSkills(){
 
     async function persistOtherSkill() {
         const {data} = await axios.post();
+        notify(); // on success
+    }
+
+    const notify = () =>{
+        toast.success('Other Skill Added Successfully.', {
+            position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            }
+        );
     }
 
     return (

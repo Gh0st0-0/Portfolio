@@ -26,11 +26,11 @@ export default function Login() {
                 alt: "You Shall Not Pass"
             },
             {
-                src: failed, // "../../Assets/Images/LoginPage/failed.jpg",
+                src: failed,
                 alt: "Failure You Are"
             },
             {
-                src: whoareyou, //"../../Assets/Images/LoginPage/whoareyou.jpg",
+                src: whoareyou, 
                 alt: "Who Are You"
             }
         ]

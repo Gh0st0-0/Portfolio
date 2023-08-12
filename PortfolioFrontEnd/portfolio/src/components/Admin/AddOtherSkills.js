@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {toast} from 'react-toastify';
 
 export default function AddOtherSkills(){
@@ -21,13 +21,30 @@ export default function AddOtherSkills(){
     }
 
     async function persistOtherSkill() {
-        const {data} = await axios.post();
-        notify(); // on success
+        const {data} = await axios.post("http://localhost:8080/otherskill/persist/saveskill/getcand/1");
+        if(data)
+            notify(); // on success
+        else
+            failure(); // on failure
     }
 
     const notify = () =>{
         toast.success('Other Skill Added Successfully.', {
             position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            }
+        );
+    }
+
+    const failure = () => {
+        toast.error('Failed to add Other Skill. Try Again.', {
+            position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -75,7 +92,7 @@ export default function AddOtherSkills(){
                         </select>
                     </div>
                 </div>
-                <button className={'custom-button'}>Add</button>
+                <button className={'custom-button'} onClick={persistOtherSkill}>Add</button>
             </div>
         </div>
     )

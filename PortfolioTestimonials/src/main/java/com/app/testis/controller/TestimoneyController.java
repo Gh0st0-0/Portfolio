@@ -36,10 +36,22 @@ public class TestimoneyController implements ImplimentTestimoneyController {
 	}
 
 	@Override
-	@PostMapping("/testimoney/delete-testimoney")
-	public boolean removeTestimoney(@RequestBody Testimoney testi) {
-		log.info("deleting the testimoney from the database", testi);
-		return this.testServ.deleteTestimoney(testi.getId());
+	@PostMapping("/testimoney/delete-testimoney/get_testi/{testi_id}")
+	public boolean removeTestimoney(@PathVariable long testi_id) {
+		Testimoney  testi = this.testServ.getTestimoneyById(testi_id);
+		if(testi != null) {
+			log.info("deleting the testimoney from the database", testi_id);
+			if(this.testServ.deleteTestimoney(testi.getId())){
+				log.info("Deleted the testimoney successfully", testi);
+				return true;
+			}else {
+				log.error("Failed to delete the testimoney", testi);
+				return false;
+			}
+		}else {
+			log.error("Failed to locate and delete the testimoney", testi_id);
+			return false;
+		}
 	}
 
 	@Override

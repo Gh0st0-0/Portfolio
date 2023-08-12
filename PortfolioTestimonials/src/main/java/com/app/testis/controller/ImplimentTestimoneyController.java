@@ -7,7 +7,7 @@ import com.app.testis.model.Testimoney;
 public interface ImplimentTestimoneyController {
 	boolean saveTestimoney(Testimoney testi);
 
-	boolean removeTestimoney(Testimoney testi);
+	boolean removeTestimoney(long testi);
 
 	Testimoney addRemoveFromTop(Testimoney testi);
 

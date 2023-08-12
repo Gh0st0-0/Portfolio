@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
@@ -33,8 +33,8 @@ export default function ManageTestimonies () {
     const navigate = useNavigate()
 
     async function deleteTestimoney(id) {
-        // const {data} = await axios.post();
-        // setAllTestimoney(data);
+        // const {data} = await axios.post(`http://loclahost:7070/testimoney/delete-testimoney/get_testi/${id}`);
+        // fetchAllTestimonies();
         console.log(`delete ${id}`);
     }
 

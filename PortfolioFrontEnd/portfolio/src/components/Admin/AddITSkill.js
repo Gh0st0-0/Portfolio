@@ -23,7 +23,7 @@ export default function AddITSkill(){
     }
 
     async function persistITSkill() {
-        const {data} = await axios.post("http://localhost:8080/itskill/persist/saveskill/getcand/1");
+        const {data} = await axios.post("http://localhost:8080/itskill/persist/saveskill/getcand/1", itSkill);
         if(data)
             notify(); // on success
         else

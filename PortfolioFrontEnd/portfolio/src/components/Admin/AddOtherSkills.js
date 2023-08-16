@@ -21,7 +21,7 @@ export default function AddOtherSkills(){
     }
 
     async function persistOtherSkill() {
-        const {data} = await axios.post("http://localhost:8080/otherskill/persist/saveskill/getcand/1");
+        const {data} = await axios.post("http://localhost:8080/otherskill/persist/saveskill/getcand/1", otherSkill);
         if(data)
             notify(); // on success
         else

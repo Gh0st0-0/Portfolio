@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {toast} from 'react-toastify';
 
 export default function AddProject(){
@@ -31,7 +31,7 @@ export default function AddProject(){
     const navigate = useNavigate()
 
     async function persistProject(){
-        const {data} = await axios.post("http://localhost:8080/project/persist/getCand/1");
+        const {data} = await axios.post("http://localhost:8080/project/persist/getCand/1", project);
         setProject(data);
         if(data != null){
             notify();
@@ -51,7 +51,7 @@ export default function AddProject(){
     }
 
     async function persistProjectImage(){
-        const {data} = await axios.post(`http://localhost:8080/project/image/getProject/${project.id}`);
+        const {data} = await axios.post(`http://localhost:8080/project/image/getProject/${project.id}`, projectImage);
         data && project.images.push(projectImage);
         if(data)
             notify();

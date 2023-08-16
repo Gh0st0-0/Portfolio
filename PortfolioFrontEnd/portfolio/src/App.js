@@ -1,6 +1,12 @@
 // All the imports for the app in the parent folder
 import { lazy, Suspense  } from "react";
+// Importing context api
 import { CandidateProvider } from "./components/CandidateContext";
+import { ITSkillIdProvider } from "./components/ITSkillIdContext";
+import { ProjectIdProvider } from "./components/ProjectIdContext";
+import { OtherSkillIdProvider } from "./components/OtherSkillIdContext";
+
+// Import tost container for tostify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
@@ -39,57 +45,61 @@ const ManageTestimonies = lazy(() => import('./components/Admin/ManageTestimonie
 export default function App() {
     return(
         <CandidateProvider>
-            <div className={'AppContailer'}>
-                <Suspense fallback={<CircleLoader className={'App-Loader'} color="#11c713" />}>
-                    <div >
-                    {/* className="introContainer" */}
-                        <Saumya></Saumya>
-                    </div>
-                    <div className={'NavContainer'}>
-                        <NavBar/>
-                    </div>
-                    <div className={'content'} >
-                        <Routes>
-                            <Route path={'/'} element={<ProjectContainer/>}></Route>
-                            <Route path={'/project'} element={<ProjectContainer/>}></Route>
-                            <Route path={"/project/getProject/{id}"} element={<OpenProject/>}></Route>
-                            <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
-                            <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
-                            <Route path={'/login'} element={<Login />}></Route>
-                            <Route path={'/cand_admin'} element={<Admin />}></Route>
-                            <Route path={'/admin/getProject/{id}'} element={<EditProject />}></Route>
-                            <Route path={'/admin/getITSkill/{id}'} element={<EditITSkill />}></Route>
-                            <Route path={'/admin/getOtherSkill/{id}'} element={<EditOtherSkill />}></Route>
-                            <Route path={'/admin/add-project'} element={<AddProject />}></Route>
-                            <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
-                            <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>
-                            <Route path={'/admin/manage-testimonies'} element={<ManageTestimonies />}></Route>
-                            {/* <Route path={'/'} element={<ContactMe />}></Route> */}
-                        </Routes>
-                    </div>
-                    <div>
-                        <TestimoneyContainer />
-                    </div>
-                    <div className={'ContactParent'}>
-                        <ContactMe ></ContactMe>
-                    </div>
-                </Suspense>
-            </div>
-
-
-            {/* Tost container always at the last totrigger message after any action with a custom message */}
-            <ToastContainer
-                position="top-left"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="colored"
-            />
+            <ProjectIdProvider>
+                <ITSkillIdProvider>
+                    <OtherSkillIdProvider>
+                        <div className={'AppContailer'}>
+                            <Suspense fallback={<CircleLoader className={'App-Loader'} color="#11c713" />}>
+                                <div >
+                                {/* className="introContainer" */}
+                                    <Saumya></Saumya>
+                                </div>
+                                <div className={'NavContainer'}>
+                                    <NavBar/>
+                                </div>
+                                <div className={'content'} >
+                                    <Routes>
+                                        <Route path={'/'} element={<ProjectContainer/>}></Route>
+                                        <Route path={'/project'} element={<ProjectContainer/>}></Route>
+                                        <Route path={"/project/getProject/{id}"} element={<OpenProject/>}></Route>
+                                        <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
+                                        <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
+                                        <Route path={'/login'} element={<Login />}></Route>
+                                        <Route path={'/cand_admin'} element={<Admin />}></Route>
+                                        <Route path={'/admin/getProject/{id}'} element={<EditProject />}></Route>
+                                        <Route path={'/admin/getITSkill/{id}'} element={<EditITSkill />}></Route>
+                                        <Route path={'/admin/getOtherSkill/{id}'} element={<EditOtherSkill />}></Route>
+                                        <Route path={'/admin/add-project'} element={<AddProject />}></Route>
+                                        <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
+                                        <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>
+                                        <Route path={'/admin/manage-testimonies'} element={<ManageTestimonies />}></Route>
+                                        {/* <Route path={'/'} element={<ContactMe />}></Route> */}
+                                    </Routes>
+                                </div>
+                                <div>
+                                    <TestimoneyContainer />
+                                </div>
+                                <div className={'ContactParent'}>
+                                    <ContactMe ></ContactMe>
+                                </div>
+                            </Suspense>
+                        </div>
+                        {/* Tost container always at the last totrigger message after any action with a custom message */}
+                        <ToastContainer
+                            position="top-left"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"
+                        />
+                    </OtherSkillIdProvider>
+                </ITSkillIdProvider>
+            </ProjectIdProvider>
         </CandidateProvider>
     )
 }

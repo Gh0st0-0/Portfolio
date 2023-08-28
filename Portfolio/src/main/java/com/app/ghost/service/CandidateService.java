@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
 
+import com.app.ghost.model.Academics;
 import com.app.ghost.model.Candidate;
 import com.app.ghost.model.Credentials;
 import com.app.ghost.model.ITSkills;
@@ -206,16 +207,48 @@ public class CandidateService implements ICandidateService {
 		Candidate cand = this.candRepo.findById(cand_id).orElse(null);
 		if (cand != null) {
 			if (cand.removeProject(proj)) {
-				log.info("Project unlinked succesfully", LocalDate.now(), proj);
+				log.info("Project unlinked succesfully", proj);
 				return true;
 			} else {
-				log.error("Failed to link project", LocalDate.now(), proj);
+				log.error("Failed to unlink project", proj);
 				return false;
 			}
 		} else {
-			log.error("Failed to locate the candidate to unlink the project", LocalDate.now(), cand);
+			log.error("Failed to locate the candidate to unlink the project", cand);
 			return false;
 		}
+	}
+
+	@Override
+	public boolean linkAcademics(Academics acad, long cand_id) {
+		Candidate cand = this.candRepo.findById(cand_id).orElse(null);
+		if(cand != null) {
+			if(cand.addAcadmics(acad)) {
+				log.info("Acadmics linked Successfully", acad);
+				return true;
+			}else {
+				log.error("Failed to link the Acadmics to candidate", acad);
+			}
+		}else {
+			log.error("Failed to locate the Candidate to link the acadmics");
+		}
+		return false;
+	}
+
+	@Override
+	public boolean unlinkAcademics(Academics acad, long cand_id) {
+		Candidate cand = this.candRepo.findById(cand_id).orElse(null);
+		if(cand != null) {
+			if(cand.removeAcadmics(acad)) {
+				log.info("Acadmics unlinked Successfully", acad);
+				return true;
+			}else {
+				log.error("Failed to unlink the Acadmics to candidate", acad);
+			}
+		}else {
+			log.error("Failed to locate the Candidate to unlink the acadmics");
+		}
+		return false;
 	}
 
 }

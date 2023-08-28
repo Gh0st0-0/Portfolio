@@ -1,6 +1,5 @@
 package com.app.ghost.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class ITSkillService implements IItSkillsService {
 	 */
 	@Override
 	public List<ITSkills> getAllITSkills() {
-		log.info("List of Skills is returned", LocalDate.now());
+		log.info("List of Skills is returned");
 		return this.itSRepo.findAll();
 	}
 
@@ -36,10 +35,10 @@ public class ITSkillService implements IItSkillsService {
 	public ITSkills findITSkillById(long id) {
 		ITSkills skill = this.itSRepo.findById(id).orElse(null);
 		if (skill != null) {
-			log.info("Fetched the skill: ", LocalDate.now(), skill);
+			log.info("Fetched the skill: ", skill);
 			return skill;
 		} else {
-			log.error("Fetching Skill reurns: ", LocalDate.now(), skill);
+			log.error("Fetching Skill reurns: ", skill);
 			return skill;
 		}
 	}

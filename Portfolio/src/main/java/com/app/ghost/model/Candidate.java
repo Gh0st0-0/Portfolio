@@ -64,6 +64,10 @@ public class Candidate extends BaseEntity {
 	@OneToMany(mappedBy = "cand3")
 	private List<Projects> projects = new ArrayList<>();
 	
+	@ToString.Exclude
+	@OneToMany(mappedBy = "_cand")
+	private List<Academics> acadmics = new ArrayList<>();
+	
 	// Helper methods
 	public boolean addITSkill(ITSkills skill) {
 		return this.itSkills.add(skill);
@@ -91,4 +95,11 @@ public class Candidate extends BaseEntity {
 		return this.projects.remove(proj);
 	}
 	
+	public boolean addAcadmics(Academics adac) {
+		return this.acadmics.add(adac);
+	}
+	
+	public boolean removeAcadmics(Academics acad) {
+		return this.acadmics.remove(acad);
+	}
 }

@@ -7,11 +7,11 @@ import com.app.ghost.model.Academics;
 public interface ImpAcademicController {
 	boolean persistAcademics(Academics academic);
 
-	boolean deleteAcademicRecord(long acadmic_id);
+	boolean deleteAcademicRecord(long cand_id, long acadmic_id);
 
 	Academics updateAcademics(Academics update);
 
 	Academics getAcademicsById(long id);
 
-	List<Academics> getAllAcademics();
+	List<Academics> getAllAcademics(long cand_id);
 }

@@ -31,6 +31,7 @@ const ContactMe = lazy(() => import("./components/ContactMe"));
 const NavBar = lazy(() => import("./Nav/NavBar"));
 const ItSkillContainer = lazy(() => import("./components/IT_Skills/ItSkillContainer"));
 const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSkillContainer"));
+const AcademicsContainer = lazy(() => import("./components/Academics/AcademicsContainer"))
 const Login = lazy(() => import('./components/Admin/Login'));
 const Admin = lazy(() => import('./components/Admin/Admin'));
 const EditProject = lazy(() => import('./components/Admin/EditProject'));
@@ -64,6 +65,7 @@ export default function App() {
                                         <Route path={"/project/getProject/{id}"} element={<OpenProject/>}></Route>
                                         <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
                                         <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
+                                        <Route path={'/academics'} element={<AcademicsContainer />} ></Route>
                                         <Route path={'/login'} element={<Login />}></Route>
                                         <Route path={'/cand_admin'} element={<Admin />}></Route>
                                         <Route path={'/admin/getProject/{id}'} element={<EditProject />}></Route>

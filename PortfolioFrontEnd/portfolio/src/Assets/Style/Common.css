@@ -23,7 +23,7 @@
 
 .Nav {
     height: 50px;
-    width: 35%;
+    width: 50%;
     background-color: #b4e6a8;
     transition: .5s ease;
     /* padding-top: 20px; */
@@ -614,6 +614,14 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+/* Academics */
+.Academics-Container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* Login Page */

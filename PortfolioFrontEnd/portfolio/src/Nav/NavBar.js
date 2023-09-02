@@ -25,6 +25,13 @@ export default function NavBar() {
                         </div>
                     </div>
                 </Link>
+                <Link to={'/academics'} >
+                    <div className={'NavLinksCnt'}>
+                        <div className={'navLinkTitle'} >
+                            Academics
+                        </div>
+                    </div>
+                </Link>
             </nav>
         </>
     )

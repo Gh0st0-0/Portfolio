@@ -3,14 +3,17 @@ import { useEffect, useState, lazy, Suspense } from 'react';
 import CircleLoader from "react-spinners/CircleLoader";
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
+import AcademicsCard from '../Academics/AcademicsCard';
 // useContext, useEffect, 
 
 const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
 const AdminITSkillCard = lazy(() => import('./AdminITSkillCard'));
 const AdminOtherSkillCard = lazy(() => import('./AdminOtherSkillCard'));
+const AdminAcademicsCard = lazy(() => import('./Academics/AdminAcademicCard'));
 const AddProjectCard = lazy(() => import('./AddProjectCard'));
 const AddITSkillCard = lazy(() => import('./AddITSkillCard'));
 const AddOtherSkillCard = lazy(() => import('./AddOtherSkillCard'));
+const AddAcademicsCard = lazy(() => import('./Academics/AddAcademicsCard'));
 
 export default function Admin() {
 
@@ -21,6 +24,8 @@ export default function Admin() {
     const [allTechs,setAllTechs] = useState([]);
 
     const [allOtherSkills, setAllOtherSkills] = useState([]);
+
+    const [allAcademics, setAllAcademics] = useState([]);
 
     useEffect(() => {
         setAllOtherSkills(null);
@@ -35,6 +40,7 @@ export default function Admin() {
             setProjects(data);
             setAllTechs(null);
             setAllOtherSkills(null);
+            setAllAcademics(null);
         }catch(error){
             throw error;
         }
@@ -47,6 +53,7 @@ export default function Admin() {
             setAllOtherSkills(data);
             setAllTechs(null);
             setProjects(null);
+            setAllAcademics(null);
         }catch(error){
             throw error;
         }
@@ -59,7 +66,21 @@ export default function Admin() {
             setAllTechs(data);
             setAllOtherSkills(null);
             setProjects(null);
+            setAllAcademics(null);
         } catch(error){
+            throw error;
+        }
+    }
+
+    async function fetchAllAcademics() {
+        // fetch all Academics and mark others an null
+        try{
+            const {data} = await axios.get("http://localhost:8080/academics/fetchList/getCand/1");
+            setAllAcademics(data);
+            setAllOtherSkills(null);
+            setProjects(null);
+            setAllTechs(null);
+        }catch(error){
             throw error;
         }
     }
@@ -105,6 +126,10 @@ export default function Admin() {
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-shuffle' ></i>
                             <span onClick={()=>fetchAllOtherSkill()}>All Non-IT-Skills</span>
+                        </li>
+                        <li className={'nav-item'} onClick={handlaNavItem}>
+                            <i className='bx bxs-graduation'></i>
+                            <span onClick={()=>fetchAllAcademics()}>Academics</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-receipt' ></i>
@@ -166,6 +191,14 @@ export default function Admin() {
                         </div>
                         {allOtherSkills && allOtherSkills.map((skill) =>
                             <AdminOtherSkillCard key={skill.id} skill={skill} />
+                        )}
+                    </div>}
+                    {allAcademics && <div className={'Admin-Academic-Container'}>
+                        <div>
+                            <AddAcademicsCard />
+                        </div>
+                        {allAcademics && allAcademics.map((academic) =>
+                            <AdminAcademicsCard key={academic.id} academic={academic} />
                         )}
                     </div>}
                 </Suspense>

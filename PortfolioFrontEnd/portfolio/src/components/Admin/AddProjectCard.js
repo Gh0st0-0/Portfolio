@@ -5,7 +5,7 @@ const AddProjectCard = () => {
     return(
         <Link className={'Add-Project-Card'} to={'/admin/add-project'}>
             <div>
-                <i class='bx bx-plus-medical bx-lg bx-lg' ></i>
+                <i className='bx bx-plus-medical bx-lg bx-lg' ></i>
             </div>
         </Link>
     )

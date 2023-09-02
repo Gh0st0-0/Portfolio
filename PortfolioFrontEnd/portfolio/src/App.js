@@ -37,11 +37,13 @@ const Admin = lazy(() => import('./components/Admin/Admin'));
 const EditProject = lazy(() => import('./components/Admin/EditProject'));
 const EditITSkill = lazy(() => import('./components/Admin/EditITSkill'));
 const EditOtherSkill = lazy(() => import('./components/Admin/EditOtherSkill'));
+const EditAcademics = lazy(() => import('./components/Admin/Academics/EditAcademics'))
 const AddProject = lazy(() => import('./components/Admin/AddProject'));
 const AddITSkill = lazy(() => import('./components/Admin/AddITSkill'));
 const AddOtherSkills = lazy(() => import('./components/Admin/AddOtherSkills'));
 const TestimoneyContainer =lazy(() => import('./components/Testimoney/TestimoneyContainer'));
 const ManageTestimonies = lazy(() => import('./components/Admin/ManageTestimonies'));
+const AddAcademics = lazy(() => import('./components/Admin/Academics/AddAcademics'));
 
 export default function App() {
     return(
@@ -70,10 +72,12 @@ export default function App() {
                                         <Route path={'/cand_admin'} element={<Admin />}></Route>
                                         <Route path={'/admin/getProject/{id}'} element={<EditProject />}></Route>
                                         <Route path={'/admin/getITSkill/{id}'} element={<EditITSkill />}></Route>
-                                        <Route path={'/admin/getOtherSkill/{id}'} element={<EditOtherSkill />}></Route>
+                                        <Route path={'/admin/getOtherSkill/{id}'} element={<EditOtherSkill />}></Route> 
+                                        <Route path={'admin/getAcademic/{id}'} element={<EditAcademics />}></Route> 
                                         <Route path={'/admin/add-project'} element={<AddProject />}></Route>
                                         <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
                                         <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>
+                                        <Route path={'/admin/add-Academics'} element={<AddAcademics />}></Route>
                                         <Route path={'/admin/manage-testimonies'} element={<ManageTestimonies />}></Route>
                                         {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                                     </Routes>

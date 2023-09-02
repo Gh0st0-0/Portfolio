@@ -5,7 +5,7 @@ import {toast} from 'react-toastify';
 
 export default function AddITSkill(){
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [itSkill, setItSkill] = useState(
         {

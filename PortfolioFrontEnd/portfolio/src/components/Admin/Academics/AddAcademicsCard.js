@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AddITSkillCard = () => {
+const AddAcademicsCard = () => {
     return (
-        <Link className={'Add-IT-Skill-Card'} to={'/admin/add-it-skill'}>
+        <Link className={'Add-Academics-Card'} to={'/admin/add-Academics'}>
             <div>
                 <i className='bx bx-plus-medical bx-lg bx-lg' ></i>
             </div>
@@ -11,4 +11,4 @@ const AddITSkillCard = () => {
     )
 }
 
-export default AddITSkillCard;
+export default AddAcademicsCard;

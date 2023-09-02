@@ -38,6 +38,9 @@ public class Academics extends BaseEntity {
 	@Column
 	private String cretificate;
 	
+	@Column
+	private String website;
+	
 	@ManyToOne
 	@JoinColumn(name = "cand_id")
 	@JsonIgnore

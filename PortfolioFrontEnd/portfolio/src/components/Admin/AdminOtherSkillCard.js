@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AdminOtherSkillCard =({skill}) => {
     const prog = (Number(skill.score)*10);
     return(
-        <Link to={'/admin/getOtherSkill/${skill.id}'}>
+        <Link to={`/admin/getOtherSkill/${skill.id}`}>
             <div className={'Other-Card'}>
                 <h2>
                     {skill.technologies}

@@ -64,6 +64,7 @@ public class AcadmicService implements IAcadmicService {
 			updated.setYearOfPassing(acadmic.getYearOfPassing());
 			updated.setField(acadmic.getField());
 			updated.setCretificate(acadmic.getCretificate());
+			updated.setWebsite(acadmic.getWebsite());
 			log.info("Updated Academic details", updated);
 			return this.acadRepo.save(updated);
 		} else {

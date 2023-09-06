@@ -8,7 +8,7 @@ const router = express.Router();
 // this gives us the access of the router functions like get, post, put, delete
 
 router.get("/AllMails", getAllMails); // get all the mails
-router.get("/Contact", ContactMe); // send me mail
+router.post("/Contact", ContactMe); // send me mail
 router.get("/fetchMail", FindBySubject); // select a mail by subject
 
 // Export the default router to the app.js

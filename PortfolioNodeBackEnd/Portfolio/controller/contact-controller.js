@@ -31,7 +31,8 @@ export const ContactMe = async (request, response, next) => {
     try{
         await contact.save();
     }catch(error){
-        console.log(error);
+        console.error(error);
+        return null;
     }
     return response.status(201).json({message: "Thank you for your message. I acknowledge receipt and appreciate your prompt response. Please be advised that I will provide a reply within the next 24 hours. Your patience is greatly appreciated."})
 }

@@ -193,6 +193,13 @@
     width: 50%;
 }
 
+.contactContainer .message{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    align-self: center;
+}
+
     /* Messagebox */
 .contactContainer textarea{
     height: 100px;
@@ -1085,6 +1092,35 @@
     margin: 5px;
 }
 
+/*Edit Academics */
+.Admin-Edit-Academics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Edit-Academics > h2 {
+    font-family: 'Merriweather', serif;
+}
+
+.Admin-AcademicsEdit-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Admin-AcademicsEdit-form > div{
+    margin: 5px;
+}
+
 .Add-Project-Card{
     border: 1px solid;
     border-radius: 40px;
@@ -1419,17 +1455,17 @@ cursor: pointer;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  /* Hide the default checkbox */
-  .toggle-slider input {
+}
+
+/* Hide the default checkbox */
+.toggle-slider input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* Create the slider */
-  .slider {
+}
+
+/* Create the slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -1439,9 +1475,9 @@ cursor: pointer;
     background-color: #ccc;
     border-radius: 34px;
     transition: 0.4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: '';
     height: 26px;
@@ -1451,21 +1487,21 @@ cursor: pointer;
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-  }
-  
-  /* Style when toggled */
-  .slider:checked {
+}
+
+/* Style when toggled */
+.slider:checked {
     background-color: #2196f3;
-  }
-  
-  .slider:checked:before {
+}
+
+.slider:checked:before {
     transform: translateX(26px);
-  }
-  
-  /* Optional styling for the label */
-  .slider-label {
+}
+
+/* Optional styling for the label */
+.slider-label {
     top: 8px;
     left: 70px; /* Adjust this value based on your needs */
     font-size: 16px;
     font-weight: bold;
-  }
+}

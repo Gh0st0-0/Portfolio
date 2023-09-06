@@ -49,7 +49,7 @@ export default function AddAcademics(){
     }
 
     const failure = () => {
-        toast.error('Failed to add It-Skill. Try Again.', {
+        toast.error('Failed to add Academics. Try Again.', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -89,7 +89,7 @@ export default function AddAcademics(){
                         <input type={'text'} className={'form-control'} name={'cretificate'} id={'cretificate'} value={academic.cretificate} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-6'}>
-                    <label htmlFor={'stdGrade'}>Standard/Grade</label>
+                        <label htmlFor={'stdGrade'}>Standard/Grade</label>
                         <input type={'text'} className={'form-control'} name={'stdGrade'} id={'stdGrade'} value={academic.stdGrade} onChange={HandleChanges} />
                     </div>
                 </div>

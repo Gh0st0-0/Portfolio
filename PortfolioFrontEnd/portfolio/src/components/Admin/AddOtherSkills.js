@@ -79,8 +79,8 @@ export default function AddOtherSkills(){
                 </div>
                 <div className={'row'}>
                     <div className={'group col-md-8'}>
-                        <label htmlFor={'iconClass'}>Icon Class</label>
-                        <input type={'text'} className={'form-control'} id={'iconClass'} name={'iconClass'} value={otherSkill.iconsClass} onChange={HandleChanges} />
+                        <label htmlFor={'iconsClass'}>Icon Class</label>
+                        <input type={'text'} className={'form-control'} id={'iconsClass'} name={'iconsClass'} value={otherSkill.iconsClass} onChange={HandleChanges} />
                     </div>
                     <div className={'group col-md-4'}>
                         <label htmlFor={'score'}>Score</label>

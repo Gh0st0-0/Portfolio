@@ -2,7 +2,6 @@
 import axios from 'axios';
 import React, { lazy, useState, Suspense, useEffect } from 'react'
 import CircleLoader from "react-spinners/CircleLoader";
-// import ProjectCard from './ProjectCard';
 
 const ProjectCard = lazy(() => import('./ProjectCard'));
 

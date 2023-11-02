@@ -3,6 +3,7 @@ package com.app.ghost.service;
 import com.app.ghost.model.Academics;
 import com.app.ghost.model.Candidate;
 import com.app.ghost.model.Credentials;
+import com.app.ghost.model.Experience;
 import com.app.ghost.model.ITSkills;
 import com.app.ghost.model.OtherSkills;
 import com.app.ghost.model.Projects;
@@ -33,4 +34,8 @@ public interface ICandidateService {
 	boolean linkAcademics(Academics acad, long cand_id);
 	
 	boolean unlinkAcademics(Academics acad, long cand_id);
+	
+	boolean linkExperience(Experience expi, long cand_id);
+	
+	boolean unlinkExperience(Experience expi, long cand_id);
 }

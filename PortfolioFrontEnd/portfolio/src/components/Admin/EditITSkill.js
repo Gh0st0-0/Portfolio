@@ -17,14 +17,17 @@ export default function EditITSkill() {
 
     const [itSkill, setItSkill] = useState(
         {
-            id: 1,
-            technologies: "Core Java",
-            version: "11",
-            score: "7",
-            iconsClass: "bx bxl-java bx-border bx-lg",
-            category: "Language"
+            technologies: "",
+            version: "",
+            score: "",
+            iconsClass: "",
+            category: ""
         }
     );
+
+    useEffect(()=>{
+        fetchITSkillId();
+    },[])
 
     return (
         <div className={'Admin-Edit-Skill'}>

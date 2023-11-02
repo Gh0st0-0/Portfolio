@@ -64,16 +64,16 @@ export default function App() {
                                     <Routes>
                                         <Route path={'/'} element={<ProjectContainer/>}></Route>
                                         <Route path={'/project'} element={<ProjectContainer/>}></Route>
-                                        <Route path={"/project/getProject/{id}"} element={<OpenProject/>}></Route>
+                                        <Route path={`/project/getProject/:{id}`} element={<OpenProject/>}></Route>
                                         <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>
                                         <Route path={'/other-skills'} element={<OtherSkillContainer />}></Route>
                                         <Route path={'/academics'} element={<AcademicsContainer />} ></Route>
                                         <Route path={'/login'} element={<Login />}></Route>
                                         <Route path={'/cand_admin'} element={<Admin />}></Route>
-                                        <Route path={'/admin/getProject/{id}'} element={<EditProject />}></Route>
-                                        <Route path={'/admin/getITSkill/{id}'} element={<EditITSkill />}></Route>
-                                        <Route path={'/admin/getOtherSkill/{id}'} element={<EditOtherSkill />}></Route> 
-                                        <Route path={'admin/getAcademic/{id}'} element={<EditAcademics />}></Route> 
+                                        <Route path={`/admin/getProject/{:id}`} element={<EditProject />}></Route>
+                                        <Route path={'/admin/getITSkill/{:id}'} element={<EditITSkill />}></Route>
+                                        <Route path={'/admin/getOtherSkill/{:id}'} element={<EditOtherSkill />}></Route> 
+                                        <Route path={'/admin/getAcademic/{:id}'} element={<EditAcademics />}></Route> 
                                         <Route path={'/admin/add-project'} element={<AddProject />}></Route>
                                         <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
                                         <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>

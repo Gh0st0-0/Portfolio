@@ -15,12 +15,12 @@ export default function OpenProject() {
         }
     }
 
-    function checkId(){
-        const pathName = window.location.pathname;
-        const id = pathName.split('/').pop();
-        console.log(id);
-        return id;
-    }
+    // function checkId(){
+    //     const pathName = window.location.pathname;
+    //     const id = pathName.split('/').pop();
+    //     console.log(id);
+    //     return id;
+    // }
     // Dummy test for animation  Start
     const [scrollY, setScrollY] = useState(0);
     useEffect(()=>{
@@ -40,8 +40,7 @@ export default function OpenProject() {
     const [porject, setProject] = useState({});
 
     useEffect(() => {
-        if(_id === checkId())
-            fetchProject(_id);
+        fetchProject(_id);
     },[_id])
     
 

@@ -3,7 +3,6 @@ import { useEffect, useState, lazy, Suspense } from 'react';
 import CircleLoader from "react-spinners/CircleLoader";
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
-import AcademicsCard from '../Academics/AcademicsCard';
 // useContext, useEffect, 
 
 const AdminProjectCard = lazy(() => import('./AdminProjectCard'));
@@ -137,7 +136,7 @@ export default function Admin() {
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-arrow-back' ></i>
-                            <span onClick={()=> navigate('/cand_admin')}>Log Out</span>
+                            <span onClick={()=> navigate('/login')}>Log Out</span>
                         </li>
                     </ul>
                 </nav>

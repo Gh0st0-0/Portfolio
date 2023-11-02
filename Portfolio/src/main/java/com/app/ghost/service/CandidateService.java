@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.app.ghost.model.Academics;
 import com.app.ghost.model.Candidate;
 import com.app.ghost.model.Credentials;
+import com.app.ghost.model.Experience;
 import com.app.ghost.model.ITSkills;
 import com.app.ghost.model.OtherSkills;
 import com.app.ghost.model.Projects;
@@ -247,6 +248,38 @@ public class CandidateService implements ICandidateService {
 			}
 		}else {
 			log.error("Failed to locate the Candidate to unlink the acadmics");
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean linkExperience(Experience expi, long cand_id) {
+		Candidate cand = this.candRepo.findById(cand_id).orElse(null);
+		if(cand != null) {
+			if(cand.addExperience(expi)) {
+				log.info("Experience object linked to the Candidate", cand);
+				return true;
+			}else {
+				log.error("Failed to link the Experience object to the candidate object", expi);
+			}
+		}else {
+			log.error("Failed to find the candidate object to link the Experience object", cand);
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean unlinkExperience(Experience expi, long cand_id) {
+		Candidate cand =  this.candRepo.findById(cand_id).orElse(null);
+		if(cand != null) {
+			if(cand.removeExperience(expi)) {
+				log.info("Experience object unlinked from candidate", cand);
+				return true;
+			}else {
+				log.error("Failed to unlink the experience from candidate", expi);
+			}
+		}else {
+			log.error("Failed to find the candidate object", cand);
 		}
 		return false;
 	}

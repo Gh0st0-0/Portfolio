@@ -45,8 +45,21 @@ public class ExperienceService implements IExperienceService {
 
 	@Override
 	public Experience updateExperience(Experience update) {
-		// TODO Auto-generated method stub
-		return null;
+		Experience exp = this.expRepo.findById(update.getId()).orElse(null);
+		if(exp != null) {
+			exp.setCompanyDesignation(update.getCompanyDesignation());
+			exp.setCompanyLocation(update.getCompanyLocation());
+			exp.setCompanyLogo(update.getCompanyLogo());
+			exp.setCompanyName(update.getCompanyName());
+			exp.setDateFrom(update.getDateFrom());
+			exp.setDateTo(update.getDateTo());
+			exp.setTimeServed(update.getTimeServed());
+			log.info("Updating the Experiencce record", exp);
+			return this.expRepo.save(exp);
+		}else {
+			log.error("Failed to find the experience object to update", exp);
+			return null;
+		}
 	}
 
 	@Override

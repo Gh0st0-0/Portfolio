@@ -11,7 +11,7 @@ public interface ImpExperienceController {
 
 	Experience updateExperience(Experience update);
 
-	Experience getExperienceById(long id);
+	Experience getExperienceById(long exp_id);
 
 	List<Experience> getAllExperience(long cand_id);
 }

@@ -39,10 +39,10 @@ public class AcademicsController implements ImpAcademicController {
 	@PostMapping("/academics/persist/saveAcademics/getcand/{cand_id}")
 	public boolean persistAcademics(@RequestBody Academics academic) {
 		if(acadLink.persistLinkAcadmics(acadServ, candServ, academic) == null) {
-			log.info("Failed to persist the Academics", academic);
+			log.error("Failed to persist the Academics", academic);
 			return false;
 		}else {
-			log.error("Successfully linked and persisted the Academics", academic);
+			log.info("Successfully linked and persisted the Academics", academic);
 			return true;
 		}
 	}

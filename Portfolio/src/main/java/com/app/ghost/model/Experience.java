@@ -41,7 +41,7 @@ public class Experience extends BaseEntity {
 	private String companyDesignation;
 	
 	@Column
-	private double timeServed;
+	private long timeServed;
 
 	@ManyToOne
 	@JoinColumn(name = "cand_id")

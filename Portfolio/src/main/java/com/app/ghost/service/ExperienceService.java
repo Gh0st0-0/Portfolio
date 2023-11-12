@@ -1,5 +1,7 @@
 package com.app.ghost.service;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -24,6 +26,11 @@ public class ExperienceService implements IExperienceService {
 	public Experience persistExperience(Experience exp) throws ExperienceNotPersistedException {
 		try{
 			log.info("Saving the Experience in database", exp);
+			if(exp.getDateTo() == null) {
+				exp.setTimeServed(ChronoUnit.MONTHS.between(exp.getDateFrom(), LocalDate.now()));
+			}else {
+				exp.setTimeServed(ChronoUnit.MONTHS.between(exp.getDateFrom(), exp.getDateTo()));
+			}
 			return this.expRepo.save(exp);
 		}catch(Exception e) {
 			throw new ExperienceNotPersistedException("Failed to persis the Experience object, Check the incomming value", e);

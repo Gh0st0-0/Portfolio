@@ -63,6 +63,7 @@ export default function App() {
                                 <div className={'content'} >
                                     <Routes>
                                         <Route path={'/'} element={<ProjectContainer/>}></Route>
+                                        <Route path={'/experience'} element={<ProjectContainer/>}></Route>
                                         <Route path={'/project'} element={<ProjectContainer/>}></Route>
                                         <Route path={`/project/getProject/:{id}`} element={<OpenProject/>}></Route>
                                         <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>

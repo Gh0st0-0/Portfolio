@@ -4,6 +4,13 @@ export default function NavBar() {
     return(
         <>
             <nav className={'Nav'}>
+                <Link to={'/experience'} >
+                    <div className={'NavLinksCnt'}>
+                        <div className={'navLinkTitle'} >
+                            Experience
+                        </div>
+                    </div>
+                </Link>
                 <Link to={'/project'} >
                     <div className={'NavLinksCnt'}>
                         <div className={'navLinkTitle'} >

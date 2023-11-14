@@ -31,7 +31,8 @@ const ContactMe = lazy(() => import("./components/ContactMe"));
 const NavBar = lazy(() => import("./Nav/NavBar"));
 const ItSkillContainer = lazy(() => import("./components/IT_Skills/ItSkillContainer"));
 const OtherSkillContainer = lazy(() => import("./components/Other_Skill/OtherSkillContainer"));
-const AcademicsContainer = lazy(() => import("./components/Academics/AcademicsContainer"))
+const AcademicsContainer = lazy(() => import("./components/Academics/AcademicsContainer"));
+const ExperienceContainer = lazy(() => import('./components/Experience/ExperienceContainer'));
 const Login = lazy(() => import('./components/Admin/Login'));
 const Admin = lazy(() => import('./components/Admin/Admin'));
 const EditProject = lazy(() => import('./components/Admin/EditProject'));
@@ -63,7 +64,7 @@ export default function App() {
                                 <div className={'content'} >
                                     <Routes>
                                         <Route path={'/'} element={<ProjectContainer/>}></Route>
-                                        <Route path={'/experience'} element={<ProjectContainer/>}></Route>
+                                        <Route path={'/experience'} element={<ExperienceContainer/>}></Route>
                                         <Route path={'/project'} element={<ProjectContainer/>}></Route>
                                         <Route path={`/project/getProject/:{id}`} element={<OpenProject/>}></Route>
                                         <Route path={'/it-skills'} element={<ItSkillContainer />}></Route>

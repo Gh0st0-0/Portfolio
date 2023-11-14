@@ -9,11 +9,11 @@ export default function ExperienceContainer() {
     const [experience, setExperience] = useState([]);
 
     async function fetchAllExperience(){
-        const {data} = await axios.get('http:localhost:8080/experience/fetchList/getCand/1');
-        setExperience(data);
+        const {data} = await axios.get('http://localhost:8080/experience/fetchList/getCand/1');
+        const sortedExperience = data.sort((a,b) => b.id -a.id); // sorted data in decending order before saving.
+        setExperience(sortedExperience);
+        console.log(sortedExperience)
     }
-
-    // Add function to apply sorting in decending order as biggest id is with the latest job
 
     useEffect(
         () => {
@@ -22,11 +22,15 @@ export default function ExperienceContainer() {
     ,[]);
 
     return (
-        <div>
+        <div className={'ExperienceContainer'}>
             <Suspense fallback={<CircleLoader className={'Loader'} color="#11c713" />}>
-                {experience && experience.map((exp) => {
-                    <ExperienceCard key={experience.id} exper={exp} />
-                })}
+                <h1>Current</h1>
+                {experience && experience.map((exp) => 
+                    <>
+                        <i class='bx bx-chevrons-up bx-lg'></i>
+                        <ExperienceCard key={exp.id} exper={exp} />
+                    </>
+                )}
             </Suspense>
         </div>
     )

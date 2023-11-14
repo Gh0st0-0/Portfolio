@@ -493,6 +493,7 @@
     flex-direction: row;
     margin-top: 20px;
     margin-bottom: 10px;
+    justify-content: space-around;
 }
 
 .IT-daddy h2{
@@ -673,7 +674,54 @@
     font-weight: bold;
 }
 
+.ExperienceContainer{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Merriweather', serif;
+}
 
+.ExperienceCard {
+    background-color: rgb(177, 149, 24);
+    padding: 15px;
+    width: 60rem;
+    height: 20rem;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.ExperienceCard > div {
+    display: flex;
+}
+
+.ExperienceCard:hover{
+    box-shadow: 0 0 5px rgba(68, 60, 60, 0.26);
+    animation:  bounce 0.6s ease-in both;
+}
+
+.ExperienceCard > h1{
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+}
+
+.ExperienceCard > h2{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.ExperienceCard > h3{
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+}
+
+.ExperienceCard h4{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
 
 /* Login Page */
 .login{

@@ -689,14 +689,18 @@
 .ExperienceCard {
     background-color: rgb(177, 149, 24);
     padding: 15px;
-    width: 60rem;
+    width: 70rem;
     height: 20rem;
     margin: 10px;
     border-radius: 30px;
+    display: flex;
 }
 
-.ExperienceCard > div {
-    display: flex;
+.ExperienceCard img{
+    width: 18rem;
+    height: 18rem;
+    border-radius: 30px;
+    margin-right: 3rem;
 }
 
 .ExperienceCard:hover{
@@ -704,23 +708,29 @@
     animation:  bounce 0.6s ease-in both;
 }
 
-.ExperienceCard > h1{
+.CompanyInfo > h1{
     font-family: 'PT Serif', serif;
     font-weight: bold;
 }
 
-.ExperienceCard > h2{
+.CompanyInfo > h2{
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
 }
-.ExperienceCard > h3{
+.CompanyInfo > h3{
     font-family: 'PT Serif', serif;
     font-weight: bold;
 }
 
-.ExperienceCard h4{
+.CompanyInfo h4{
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
+}
+
+.CompanyInfo > div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
 /* Login Page */

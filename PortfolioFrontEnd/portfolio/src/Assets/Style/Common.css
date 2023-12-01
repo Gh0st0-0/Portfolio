@@ -140,10 +140,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    font-family: 'Hedvig Letters Serif', serif;
 }
 
 .CredentialContainer p{
     width: 250px;
+    font-family: 'Hedvig Letters Serif', serif;
 }
 
 .CredentialContainer a:hover{

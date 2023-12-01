@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ghost.model.Candidate;
+import com.app.ghost.model.SafeCandidate;
 import com.app.ghost.service.CandidateService;
+import com.app.ghost.utils.SaveCandidate;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,22 +25,24 @@ import lombok.extern.slf4j.Slf4j;
 public class CandidateController implements ImpCandidateController {
 	
 	private CandidateService candSer;
+	private SaveCandidate sCandi;
 	
 //  Autowired DI
 	public CandidateController(CandidateService candSer) {
 		this.candSer = candSer;
+		this.sCandi = SaveCandidate.getSaveCandi();
 	}
 
 	@Override
 	@GetMapping("/candidate/getcandidate/{cand_id}")
-	public Candidate fetchCandidate(@PathVariable long cand_id) {
+	public SafeCandidate fetchCandidate(@PathVariable long cand_id) {
 		Candidate person = this.candSer.findCandidate(cand_id);
 		if(person != null) {
 			log.info("Person found", LocalDate.now(), person);
 		}else {
 			log.error("Person Not found", LocalDate.now(), person);
 		}
-		return person;
+		return this.sCandi.lockCandidate(person);
 	}
 
 	@Override

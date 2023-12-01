@@ -1,9 +1,10 @@
 package com.app.ghost.controller;
 
 import com.app.ghost.model.Candidate;
+import com.app.ghost.model.SafeCandidate;
 
 public interface ImpCandidateController {
-	Candidate fetchCandidate(long id);
+	SafeCandidate fetchCandidate(long id);
 
 	boolean candidatePersisted(Candidate person);
 

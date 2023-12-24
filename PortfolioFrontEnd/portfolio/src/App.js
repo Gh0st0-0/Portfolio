@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
 import CircleLoader from "react-spinners/CircleLoader";
+//import AddExperience from "./components/Admin/Experience/AddExperience";
 // import LoadingPage from "./components/LoadingPage";
 // import Login from "./components/Admin/Login";
 // import Saumya from "./components/Saumya";
@@ -45,6 +46,7 @@ const AddOtherSkills = lazy(() => import('./components/Admin/AddOtherSkills'));
 const TestimoneyContainer =lazy(() => import('./components/Testimoney/TestimoneyContainer'));
 const ManageTestimonies = lazy(() => import('./components/Admin/ManageTestimonies'));
 const AddAcademics = lazy(() => import('./components/Admin/Academics/AddAcademics'));
+const AddExperience = lazy(() => import("./components/Admin/Experience/AddExperience"))
 
 export default function App() {
     return(
@@ -80,6 +82,7 @@ export default function App() {
                                         <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
                                         <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>
                                         <Route path={'/admin/add-Academics'} element={<AddAcademics />}></Route>
+                                        <Route path={'/admin/add-Experience'} element={<AddExperience />}></Route>
                                         <Route path={'/admin/manage-testimonies'} element={<ManageTestimonies />}></Route>
                                         {/* <Route path={'/'} element={<ContactMe />}></Route> */}
                                     </Routes>

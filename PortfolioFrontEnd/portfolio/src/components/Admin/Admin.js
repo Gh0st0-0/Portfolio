@@ -13,6 +13,8 @@ const AddProjectCard = lazy(() => import('./AddProjectCard'));
 const AddITSkillCard = lazy(() => import('./AddITSkillCard'));
 const AddOtherSkillCard = lazy(() => import('./AddOtherSkillCard'));
 const AddAcademicsCard = lazy(() => import('./Academics/AddAcademicsCard'));
+const AdminExperienceCard = lazy(() => import('./Experience/AdminExperienceCard'));
+const AddExperienceCard = lazy(() => import('./Experience/AddExperienceCard'));
 
 export default function Admin() {
 
@@ -26,10 +28,14 @@ export default function Admin() {
 
     const [allAcademics, setAllAcademics] = useState([]);
 
+    const [allExperience, setAllExperience] = useState([]);
+
     useEffect(() => {
         setAllOtherSkills(null);
         setAllTechs(null);
         setProjects(null);
+        setAllAcademics(null);
+        setAllExperience(null)
     },[]);
 
     async function fetchAllProjects() {
@@ -37,6 +43,7 @@ export default function Admin() {
         try{
             const {data} = await axios.post("http://localhost:8080/project/AllProjects/getCand/1");
             setProjects(data);
+            setAllExperience(null);
             setAllTechs(null);
             setAllOtherSkills(null);
             setAllAcademics(null);
@@ -53,6 +60,7 @@ export default function Admin() {
             setAllTechs(null);
             setProjects(null);
             setAllAcademics(null);
+            setAllExperience(null);
         }catch(error){
             throw error;
         }
@@ -66,6 +74,7 @@ export default function Admin() {
             setAllOtherSkills(null);
             setProjects(null);
             setAllAcademics(null);
+            setAllExperience(null);
         } catch(error){
             throw error;
         }
@@ -79,6 +88,21 @@ export default function Admin() {
             setAllOtherSkills(null);
             setProjects(null);
             setAllTechs(null);
+            setAllExperience(null);
+        }catch(error){
+            throw error;
+        }
+    }
+
+    async function fetchAllExperience() {
+        // fetch all the Experience and mark others as null
+        try{
+            const {data} = await axios.get("http://localhost:8080/experience/fetchList/getCand/1");
+            setAllExperience(data);
+            setAllAcademics(null);
+            setAllOtherSkills(null);
+            setProjects(null);
+            setAllTechs(null)
         }catch(error){
             throw error;
         }
@@ -115,7 +139,7 @@ export default function Admin() {
                     </div>
                     <ul>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i className='bx bxs-briefcase'></i>
+                            <i class='bx bx-spreadsheet' ></i>
                             <span onClick={()=>fetchAllProjects()}>All Projects</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
@@ -129,6 +153,10 @@ export default function Admin() {
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bxs-graduation'></i>
                             <span onClick={()=>fetchAllAcademics()}>Academics</span>
+                        </li>
+                        <li className={'nav-item'} onClick={handlaNavItem}>
+                            <i class='bx bxs-briefcase-alt-2'></i>
+                            <span onClick={()=>fetchAllExperience()}>Experience</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
                             <i className='bx bx-receipt' ></i>
@@ -198,6 +226,14 @@ export default function Admin() {
                         </div>
                         {allAcademics && allAcademics.map((academic) =>
                             <AdminAcademicsCard key={academic.id} academic={academic} />
+                        )}
+                    </div>}
+                    {allExperience && <div className={'Admin-Experience-Container'}>
+                        <div>
+                            <AddExperienceCard />
+                        </div>
+                        {allExperience && allExperience.map((exper) =>
+                            <AdminExperienceCard key={exper.id} exper={exper} />
                         )}
                     </div>}
                 </Suspense>

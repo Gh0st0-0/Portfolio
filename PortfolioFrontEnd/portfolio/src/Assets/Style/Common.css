@@ -1488,6 +1488,31 @@
     animation:  bounce 0.6s ease-in both;
 }
 
+.Admin-Add-Exper-form{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.Form-Image{
+    margin: 5px;
+    align-self: center;
+}
+
+.Form-Image > img{
+    margin: 5px;
+    align-self: center;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20px;
+}
+
 /* Testimoney component */
 .Testi-Container{
     display: flex;

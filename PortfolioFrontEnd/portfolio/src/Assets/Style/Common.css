@@ -1513,6 +1513,12 @@
     border-radius: 20px;
 }
 
+.Resume-Container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
 /* Testimoney component */
 .Testi-Container{
     display: flex;

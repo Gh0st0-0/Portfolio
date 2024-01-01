@@ -5,7 +5,7 @@ import { CandidateProvider } from "./components/CandidateContext";
 import { ITSkillIdProvider } from "./components/ITSkillIdContext";
 import { ProjectIdProvider } from "./components/ProjectIdContext";
 import { OtherSkillIdProvider } from "./components/OtherSkillIdContext";
-
+import Resume from "./components/Admin/Resume/Resume.js";
 // Import tost container for tostify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +25,7 @@ import CircleLoader from "react-spinners/CircleLoader";
 
 
 // Lazy loading the components
+
 const ProjectContainer = lazy(() => import("./components/Projects/ProjectContainer"));
 const OpenProject = lazy(() => import("./components/Projects/OpenProject"));
 const Saumya = lazy(() => import("./components/Saumya"));
@@ -59,6 +60,9 @@ export default function App() {
                                 <div >
                                 {/* className="introContainer" */}
                                     <Saumya></Saumya>
+                                </div>
+                                <div className={'Resume-Container'}>
+                                    <Resume/>
                                 </div>
                                 <div className={'NavContainer'}>
                                     <NavBar/>

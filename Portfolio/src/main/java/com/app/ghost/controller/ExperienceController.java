@@ -79,7 +79,8 @@ public class ExperienceController implements ImpExperienceController {
 		Candidate cand = this.candServ.findCandidate(cand_id);
 		if(cand != null) {
 			log.info("Found Candidate to return the list of Experience", cand);
-			return cand.getExper();
+			return this.expServ.getallExperience();
+			//return cand.getExper();
 		}else {
 			log.error("Failed to find the candidate to return the list of experience", cand);
 			return null;

@@ -72,7 +72,13 @@ public class ExperienceService implements IExperienceService {
 	@Override
 	public Experience findExperienceById(long id) {
 		Experience exp = this.expRepo.findById(id).orElse(null);
-		if(exp != null) log.info("returning the Experience object", exp);
+		if(exp != null) {
+			log.info("returning the Experience object", exp);
+			if(exp.getDateTo() == null) {
+				exp.setTimeServed(ChronoUnit.MONTHS.between(exp.getDateFrom(), LocalDate.now()));
+					this.updateExperience(exp);
+			}
+		}
 		else log.error("Failed to find the Experience object", exp);
 		return exp;
 	}
@@ -80,7 +86,15 @@ public class ExperienceService implements IExperienceService {
 	@Override
 	public List<Experience> getallExperience() {
 		log.info("Finding the list of all the Experience");
-		return this.expRepo.findAll();
+		List<Experience> getExper = this.expRepo.findAll();
+		for(Experience exper : getExper) {
+			if(exper.getDateTo() == null) {
+				log.info("Updating Served Time for current job", exper);
+				exper.setTimeServed(ChronoUnit.MONTHS.between(exper.getDateFrom(), LocalDate.now()));
+				this.updateExperience(exper);
+			}
+		}
+		return getExper;
 	}
 
 }

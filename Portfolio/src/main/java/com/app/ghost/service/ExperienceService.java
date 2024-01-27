@@ -75,7 +75,9 @@ public class ExperienceService implements IExperienceService {
 		if(exp != null) {
 			log.info("returning the Experience object", exp);
 			if(exp.getDateTo() == null) {
+				long getTime = exp.getTimeServed();
 				exp.setTimeServed(ChronoUnit.MONTHS.between(exp.getDateFrom(), LocalDate.now()));
+				if(getTime != exp.getTimeServed()) // if the time served changes only the call the update service
 					this.updateExperience(exp);
 			}
 		}
@@ -90,8 +92,10 @@ public class ExperienceService implements IExperienceService {
 		for(Experience exper : getExper) {
 			if(exper.getDateTo() == null) {
 				log.info("Updating Served Time for current job", exper);
+				long timeServed = exper.getTimeServed();
 				exper.setTimeServed(ChronoUnit.MONTHS.between(exper.getDateFrom(), LocalDate.now()));
-				this.updateExperience(exper);
+				if(timeServed != exper.getTimeServed()) // if the time served changes only then update the experience in database
+					this.updateExperience(exper);
 			}
 		}
 		return getExper;

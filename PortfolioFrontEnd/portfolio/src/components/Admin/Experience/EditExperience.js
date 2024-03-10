@@ -20,6 +20,10 @@ export default function EditExperience() {
         }
     };
 
+    useEffect(() => {
+        fetchExperienceByID();
+    }, []);
+
     async function editExperience(){
         try{
             const { data } = await axios.post(`http://localhost:8080/experience/persist/update7`, experience);

@@ -6,7 +6,19 @@ export default function EditExperience() {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [experience, setExperience] = useState({});
+    // const [experience, setExperience] = useState({});
+    const [experience, setExperience] = useState(
+        {
+            id: 1,
+            companyName: "Techture",
+            companyLogo: "https://ik.imagekit.io/vrchd4vczr/CompanyLogos/techture.jfif?updatedAt=1700908305341",
+            companyLocation: "Indore M.P.",
+            dateFrom: "2020-01-30",
+            dateTo: "2021-04-02",
+            companyDesignation: "BIM Intern.",
+            timeServed: 15
+        }
+    );
 
     async function fetchExperienceByID(){
         try{
@@ -21,7 +33,7 @@ export default function EditExperience() {
     };
 
     useEffect(() => {
-        fetchExperienceByID();
+        //fetchExperienceByID();
     }, []);
 
     async function editExperience(){
@@ -39,8 +51,13 @@ export default function EditExperience() {
     };
 
     return (
-        <>
-            <h1>Edit Experience</h1>
-        </>
+        <div className={'Admin-Edit-Experience'}>
+            <div className={'Nav-In-Admin'}>
+                <i className='bx bx-left-arrow-alt bx-lg' onClick={()=> navigate('/cand_admin')}></i>
+                <i className='bx bx-log-out bx-lg' onClick={()=> navigate('/login')}></i>
+            </div>
+            <h2>Edit Experience</h2>
+            
+        </div>
     );
 }

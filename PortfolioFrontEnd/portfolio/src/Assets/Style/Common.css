@@ -1240,6 +1240,9 @@
 .Nav-In-Admin{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: -webkit-fill-available;
 }
 
 .Nav-In-Admin > i:hover{
@@ -1498,6 +1501,20 @@
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
+}
+
+/*Edit Exoerience */
+.Admin-Edit-Experience{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Admin-Edit-Experience > h2 {
+    font-family: 'Merriweather', serif;
 }
 
 .Form-Image{

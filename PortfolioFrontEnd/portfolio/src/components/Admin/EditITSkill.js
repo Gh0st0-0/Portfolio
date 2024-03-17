@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 
 export default function EditITSkill() {
     const {id} = useParams();
+    const navigate = useNavigate();
+
 
     async function fetchITSkillId() {
         const {data} = await axios.post();
@@ -31,6 +33,10 @@ export default function EditITSkill() {
 
     return (
         <div className={'Admin-Edit-Skill'}>
+            <div className={'Nav-In-Admin'}>
+                <i className='bx bx-left-arrow-alt bx-lg' onClick={()=> navigate('/cand_admin')}></i>
+                <i className='bx bx-log-out bx-lg' onClick={()=> navigate('/login')}></i>
+            </div>
             <h2>
                 Edit IT-Skill
             </h2>

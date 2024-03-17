@@ -11,17 +11,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
 import CircleLoader from "react-spinners/CircleLoader";
-//import AddExperience from "./components/Admin/Experience/AddExperience";
-// import LoadingPage from "./components/LoadingPage";
-// import Login from "./components/Admin/Login";
-// import Saumya from "./components/Saumya";
-// import NavBar from "./Nav/NavBar";
-// import ProjectContainer from "./components/Projects/ProjectContainer";
-// import ItSkillContainer from "./components/IT_Skills/ItSkillContainer";
-// import OtherSkillContainer from "./components/Other_Skill/OtherSkillContainer";
-// import OpenProject from "./components/Projects/OpenProject";
-// import EditProject from "./components/Admin/EditProject";
-// import ContactMe from "./components/ContactMe";
 
 
 // Lazy loading the components
@@ -41,6 +30,7 @@ const EditProject = lazy(() => import('./components/Admin/EditProject'));
 const EditITSkill = lazy(() => import('./components/Admin/EditITSkill'));
 const EditOtherSkill = lazy(() => import('./components/Admin/EditOtherSkill'));
 const EditAcademics = lazy(() => import('./components/Admin/Academics/EditAcademics'))
+const EditExperience = lazy(() => import('./components/Admin/Experience/EditExperience'))
 const AddProject = lazy(() => import('./components/Admin/AddProject'));
 const AddITSkill = lazy(() => import('./components/Admin/AddITSkill'));
 const AddOtherSkills = lazy(() => import('./components/Admin/AddOtherSkills'));
@@ -78,10 +68,11 @@ export default function App() {
                                         <Route path={'/academics'} element={<AcademicsContainer />} ></Route>
                                         <Route path={'/login'} element={<Login />}></Route>
                                         <Route path={'/cand_admin'} element={<Admin />}></Route>
-                                        <Route path={`/admin/getProject/{:id}`} element={<EditProject />}></Route>
-                                        <Route path={'/admin/getITSkill/{:id}'} element={<EditITSkill />}></Route>
-                                        <Route path={'/admin/getOtherSkill/{:id}'} element={<EditOtherSkill />}></Route> 
-                                        <Route path={'/admin/getAcademic/{:id}'} element={<EditAcademics />}></Route> 
+                                        <Route path={`/admin/getProject/:id`} element={<EditProject />}></Route>
+                                        <Route path={`/admin/getITSkill/:id`} element={<EditITSkill />}></Route>
+                                        <Route path={`/admin/getOtherSkill/:id`} element={<EditOtherSkill />}></Route> 
+                                        <Route path={`/admin/getAcademic/:id`} element={<EditAcademics />}></Route> 
+                                        <Route path={`/admin/getExperience/:id`} element={<EditExperience/>}></Route> 
                                         <Route path={'/admin/add-project'} element={<AddProject />}></Route>
                                         <Route path={'/admin/add-it-skill'} element={<AddITSkill />}></Route>
                                         <Route path={'/admin/add-other-skill'} element={<AddOtherSkills />}></Route>

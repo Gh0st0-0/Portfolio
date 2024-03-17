@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminAcademicCard = ({academic}) => {
   return (
-    <Link to={`admin/getAcademic/${academic.id}`}>
+    <Link to={`/admin/getAcademic/${academic.id}`}>
         <div className={'Academic-Card'}>
             <h2>
                 {academic.collegeSchoolName} 

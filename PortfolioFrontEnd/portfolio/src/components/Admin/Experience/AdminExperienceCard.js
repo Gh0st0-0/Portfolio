@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminExperienceCard = ({exper}) => {
     return (
-        <Link to={`admin/getExperience/${exper.id}`}>
+        <Link to={`/admin/getExperience/${exper.id}`}>
             <div className={'ExperienceCard'}>
                 <div>
                     <img src={exper && exper.companyLogo} loading={'lazy'} alt={exper.companyName + " Logo"}/>

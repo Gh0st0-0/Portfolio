@@ -139,7 +139,7 @@ export default function Admin() {
                     </div>
                     <ul>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bx-spreadsheet' ></i>
+                            <i className='bx bx-spreadsheet' ></i>
                             <span onClick={()=>fetchAllProjects()}>All Projects</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
@@ -155,7 +155,7 @@ export default function Admin() {
                             <span onClick={()=>fetchAllAcademics()}>Academics</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
-                            <i class='bx bxs-briefcase-alt-2'></i>
+                            <i className='bx bxs-briefcase-alt-2'></i>
                             <span onClick={()=>fetchAllExperience()}>Experience</span>
                         </li>
                         <li className={'nav-item'} onClick={handlaNavItem}>
